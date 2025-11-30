@@ -1,7 +1,6 @@
 class_name TilePlacementRule
 extends Resource
 
-
 @export var position_anywhere: bool = false
 @export var filter_by_valid: bool = true
 @export var valid_positions: Array[Vector2]

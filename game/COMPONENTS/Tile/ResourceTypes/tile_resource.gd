@@ -1,7 +1,6 @@
 class_name TileResource
 extends Resource
 
-
 @export_group("General")
 @export var name: String
 @export var art: CompressedTexture2D
@@ -9,7 +8,6 @@ extends Resource
 @export var behaviors: Array[TileBehavior]
 @export var tile_placement_rule: TilePlacementRule
 @export var base_points: int = 0
-
 
 @export_group("Item 1")
 @export var item1: Item

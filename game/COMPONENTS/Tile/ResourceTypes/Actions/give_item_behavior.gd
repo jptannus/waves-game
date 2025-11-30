@@ -1,7 +1,6 @@
 class_name GiveItemBehavior
 extends TileBehaviorAction
 
-
 @export var target_tile_name: String
 @export var item_name: String
 

@@ -1,7 +1,6 @@
 class_name DropTileAction
 extends TileBehaviorAction
 
-
 @export var drop_tile_name: String
 @export var drop_probability: float
 

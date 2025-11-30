@@ -16,6 +16,7 @@ var _is_paused: bool = false
 var _turn_counter: int = 0
 var _round_counter: int = 0
 
+
 func start_round() -> void:
 	if _is_paused:
 		return
@@ -42,14 +43,14 @@ func pause() -> void:
 	if !_is_paused:
 		%Timer.set_paused(true)
 		_is_paused = true
-	
-	
+
+
 func resume() -> void:
 	if _is_paused:
 		%Timer.set_paused(false)
 		_is_paused = false
-	
-	
+
+
 func is_time_based() -> bool:
 	return turn_time_based && turn_time_interval > 0.0
 

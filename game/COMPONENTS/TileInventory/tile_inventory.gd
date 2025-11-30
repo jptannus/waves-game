@@ -11,17 +11,18 @@ signal tile_taken(tile: Tile)
 @export var max_size: int = 9999
 
 var _inventory_size: int = 0
-var _inventory: Dictionary[String, int] = {}
-var _instances: Dictionary[String, DraggableStack] = {}
+var _inventory: Dictionary[String, int] = { }
+var _instances: Dictionary[String, DraggableStack] = { }
+
 
 func add_tile(tile: Tile) -> bool:
 	return add_tile_by_name(tile.get_tile_name())
-	
+
 
 func add_tile_by_name(tile_name: String) -> bool:
 	if is_full():
 		return false
-	
+
 	_add_tile_to_inventory(tile_name)
 	_inventory_size += 1
 	return true
@@ -46,8 +47,8 @@ func take_first_tile() -> Tile:
 	if _inventory.size() <= 0:
 		return null
 	return take_tile(_inventory.keys().get(0))
-	
-	
+
+
 func take_first_stack() -> DraggableStack:
 	if _instances.size() <= 0:
 		return null
@@ -113,8 +114,8 @@ func _on_mouse_pressed(droppbable_area: DroppableArea) -> void:
 
 func _on_item_added(_node: Node2D) -> void:
 	pass
-	
+
 
 func _on_item_removed(tile_name: String) -> Callable:
-	return func ():
+	return func():
 		tile_taken.emit(_silent_take_tile(tile_name))

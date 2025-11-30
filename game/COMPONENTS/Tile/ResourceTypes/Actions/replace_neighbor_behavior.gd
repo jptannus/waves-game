@@ -1,7 +1,6 @@
 class_name ReplaceNeighborBehavior
 extends TileBehaviorAction
 
-
 @export var target_tile_name: String
 @export var transform_to_tile_name: String
 

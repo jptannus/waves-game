@@ -1,15 +1,13 @@
-# DraggableStack
-# 	This scene will hold a stack of a given node that can be draggable. 
-#	This node won't receive any drops, you can only drag things out of it.
 class_name DraggableStack
 extends Node2D
-
+## DraggableStack
+## 	This scene will hold a stack of a given node that can be draggable.
+##	This node won't receive any drops, you can only drag things out of it.
 
 signal mouse_pressed(droppable_area: DroppableArea)
 signal item_added(node: Node2D)
 signal item_removed()
 signal got_empty()
-
 
 @export var item: PackedScene
 @export var infinite: bool = true
@@ -29,7 +27,7 @@ func set_item(node: Node2D) -> void:
 
 func set_quantity(amount: int) -> void:
 	quantity = amount
-	
+
 
 func resolve_drop() -> void:
 	if !infinite and !%DropableArea.is_holding():
@@ -53,4 +51,3 @@ func _on_dropable_area_content_dragged(node: Node2D) -> void:
 
 func _on_dropable_area_drop_resolved() -> void:
 	resolve_drop()
-		

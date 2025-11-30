@@ -1,17 +1,16 @@
 class_name Bird
 extends Node2D
 
-
 var _speed: float
 
 
 func set_bird_speed(speed: float) -> void:
 	_speed = speed
-	
+
 
 func fly(pos: Vector2, steps: int, step_distance: float, direction: Vector2i, speed: float) -> void:
 	global_position = pos
-	var tweenStep: Vector2 = Vector2(0,0)
+	var tweenStep: Vector2 = Vector2(0, 0)
 	%Art.flip_h = false
 	%Art.rotation_degrees = 0
 	%FlyAudio.play()
@@ -36,7 +35,7 @@ func fly(pos: Vector2, steps: int, step_distance: float, direction: Vector2i, sp
 		tween.tween_property(self, "global_position", global_position + tweenStep, speed)
 		tween.play()
 		await tween.finished
-	
+
 	var tween2 = get_tree().create_tween()
 	tween2.tween_property(self, "global_position", tweenStep * 10, speed)
 	await tween2.finished

@@ -1,7 +1,6 @@
 class_name TileBehaviorAction
 extends Resource
 
-
 func do_action(_tile_map: Array[Array], _tile: Tile, _pos: Vector2i) -> void:
 	print("No action was set for this tile behavior action")
 

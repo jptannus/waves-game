@@ -8,7 +8,7 @@ enum TileLifeCycle {
 	DURING_TURN,
 	TURN_END,
 	ACTIVATED, # By a bird or another tile
-	DESTROYED
+	DESTROYED,
 }
 
 @export var life_cycle: Array[TileLifeCycle]

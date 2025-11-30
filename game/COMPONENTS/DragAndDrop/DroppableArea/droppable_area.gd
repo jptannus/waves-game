@@ -1,10 +1,9 @@
-# DroppableArea
-# 	This scene can be used to be placed in any place in the screen and it will
-#	work as a possible place for draggable scenes to be placed. Any scene can be
-#	draggable if it is given to the DroppableArea and is a Node2D.
 class_name DroppableArea
 extends StaticBody2D
-
+## DroppableArea
+## 	This scene can be used to be placed in any place in the screen and it will
+##	work as a possible place for draggable scenes to be placed. Any scene can be
+##	draggable if it is given to the DroppableArea and is a Node2D.
 
 signal dropped(node: Node2D)
 signal content_dragged(node: Node2D)
@@ -16,6 +15,7 @@ signal drop_resolved()
 
 var _disabled: bool = false
 var _drop_only: bool = false
+
 
 func _ready() -> void:
 	%Sprite2D.visible = display_visuals
@@ -30,6 +30,7 @@ func drop(node: Node2D) -> bool:
 	if result:
 		dropped.emit(node)
 	return result
+
 
 func silent_drop(node: Node2D) -> bool:
 	if is_disabled():
@@ -47,6 +48,7 @@ func silent_drop(node: Node2D) -> bool:
 	else:
 		return false
 
+
 func drag() -> Node2D:
 	var node = silent_drag()
 	content_dragged.emit.call_deferred(node)
@@ -56,11 +58,12 @@ func drag() -> Node2D:
 func silent_drag() -> Node2D:
 	if _drop_only:
 		return null
-	
+
 	var node = holding_node
 	holding_node = null
 	_update_display()
 	return node
+
 
 func delete_content() -> void:
 	if holding_node:
@@ -68,10 +71,10 @@ func delete_content() -> void:
 		holding_node = null
 		_update_display()
 
-		
+
 func is_holding() -> bool:
 	return !!holding_node
-	
+
 
 func disable() -> void:
 	_disabled = true
@@ -106,4 +109,3 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		if event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 			if event.pressed:
 				mouse_pressed.emit(self)
-		

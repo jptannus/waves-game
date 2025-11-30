@@ -10,6 +10,7 @@ extends Node2D
 
 var _tile_placement_enabled: bool = true
 
+
 func _ready() -> void:
 	_setup_board()
 	_setup_inventory()
@@ -24,20 +25,21 @@ func _setup_board() -> void:
 	%Board.create_empty_board(board_columns, board_rows)
 	%Board.selector_pressed.connect(_on_board_selector_pressed)
 	%Board.tile_removed.connect(_on_board_tile_removed)
-	
-	
+
+
 func _on_board_selector_pressed(_pos: Vector2i) -> void:
 	if _bird_action_active:
 		%Board.hide_selectors()
 		_end_bird_action(_pos)
-		
+
 
 func _on_board_tile_removed(tile: Tile, pos: Vector2i) -> void:
 	tile.place_tile.connect(_on_tile_place_tile)
 	for behavior in tile.get_behaviors():
 		if behavior.should_it_trigger(TileBehaviorTrigger.TileLifeCycle.DESTROYED, tile):
 			behavior.do_actions(%Board.get_tile_map(), tile, pos)
-			
+
+
 func _on_tile_place_tile(tile: Tile, pos: Vector2i) -> void:
 	%Board.drop_tile_at(tile, pos)
 
@@ -54,7 +56,7 @@ func _setup_inventory() -> void:
 func _on_board_mouse_pressed(droppable_area: DroppableArea, _pos: Vector2) -> void:
 	if !_tile_placement_enabled:
 		return
-	
+
 	if !droppable_area.is_holding():
 		var tile: Tile = %TileInventory.take_first_tile()
 		if tile:
@@ -93,7 +95,7 @@ func _refill_inventory() -> void:
 	if !tile_inventory_list:
 		push_error("No tile inventory list was set")
 		return
-	
+
 	var tile_resource: TileResource = tile_inventory_list.get_random_item().get_value()
 	%TileInventory.add_tile_by_name(tile_resource.name)
 
@@ -101,12 +103,11 @@ func _refill_inventory() -> void:
 func _disable_tile_placement() -> void:
 	_tile_placement_enabled = false
 	%TileInventory.visible = false
-	
+
 
 func _enable_tile_placement() -> void:
 	_tile_placement_enabled = true
 	%TileInventory.visible = true
-
 
 ##############################################################################
 #endregion
@@ -115,6 +116,7 @@ func _enable_tile_placement() -> void:
 ########################## Turn Management ####################################
 
 var _first_round: bool
+
 
 func _setup_turn_system() -> void:
 	_first_round = true
@@ -126,7 +128,7 @@ func _setup_turn_system() -> void:
 	%TurnSystem.round_started.connect(_update_round_ui)
 	%TurnSystem.all_rounds_ended.connect(_on_last_round_end)
 	_setup_turn_ui()
-	
+
 
 func _pass_the_turn() -> void:
 	%TurnSystem.end_turn()
@@ -153,20 +155,20 @@ func _start_new_turn() -> void:
 func _on_round_end() -> void:
 	_first_round = false
 	%TurnSystem.total_turns_per_round = bird_every_turns
-	
-	
+
+
 func _on_last_round_end() -> void:
 	SceneManager.change_scene(SceneManager.GAME_OVER)
-	
-	
+
+
 func _update_round_ui() -> void:
 	game_ui.turn_current_value.text = str(%TurnSystem.get_round_counter() - 1)
-	
+
 
 func _setup_turn_ui() -> void:
-	game_ui.turn_total_value.text = "/"+str(%TurnSystem.total_rounds - 1)
+	game_ui.turn_total_value.text = "/" + str(%TurnSystem.total_rounds - 1)
 	_update_round_ui()
-	
+
 
 func _is_last_bird() -> bool:
 	return %TurnSystem.get_round_counter() == %TurnSystem.total_rounds
@@ -182,6 +184,7 @@ func _is_last_bird() -> bool:
 @export var bird_tile_delay: float = 0.3
 
 var _bird_action_active: bool = false
+
 
 func _is_bird_turn(turn: int) -> bool:
 	if turn < initial_bird_turn:
@@ -216,25 +219,25 @@ func _end_bird_action(pos: Vector2i) -> void:
 	elif pos.y == board_columns:
 		_call_bird_fly(pos, Vector2i(-1, 0))
 		await _bird_pass_on_row(pos.x, true)
-	
+
 	if !_is_last_bird():
 		_enable_tile_placement()
-	
+
 	ScoreSystem.finish_combo()
 	_hide_combo_counter()
 	_bird_action_active = false
-	
+
 	if _is_last_bird():
 		%TurnSystem.end_round()
 
 
 func _call_bird_fly(pos: Vector2i, direction: Vector2i) -> void:
 	%Bird.fly(
-		%Board.get_global_selector_position(pos), 
-		board_rows, 
+		%Board.get_global_selector_position(pos),
+		board_rows,
 		%Board.tile_height,
 		direction,
-		bird_tile_delay
+		bird_tile_delay,
 	)
 
 
@@ -271,8 +274,8 @@ func _bird_activate_tile_at(row: int, column: int) -> void:
 
 func _on_tile_add_score(score: int) -> void:
 	ScoreSystem.add_score_to_combo(score)
-	
-	
+
+
 func _on_tile_add_multiplier(multiplier: float) -> void:
 	ScoreSystem.add_multiplier_to_combo(multiplier)
 
@@ -286,9 +289,10 @@ func _setup_score_system() -> void:
 	ScoreSystem.reset_score()
 	ScoreSystem.combo_updated.connect(_update_combo_ui)
 	ScoreSystem.score_updated.connect(_on_score_updated)
-	
+
 	_update_score_ui()
 	_hide_combo_counter()
+
 
 func _on_score_updated() -> void:
 	_update_score_ui()
@@ -298,7 +302,7 @@ func _show_combo_counter() -> void:
 	game_ui.combo_points_value.text = "0"
 	game_ui.combo_multiplier_value.text = "0"
 	game_ui.combo_container.visible = true
-	
+
 
 func _hide_combo_counter() -> void:
 	#game_ui.combo_container.visible = false #INFO: Hidden for now so I can see the score!
@@ -307,7 +311,7 @@ func _hide_combo_counter() -> void:
 
 func _update_score_ui() -> void:
 	game_ui.score_value.text = str(ScoreSystem.get_score())
-	
+
 
 func _update_combo_ui() -> void:
 	game_ui.combo_points_value.text = str(ScoreSystem.get_combo_score())

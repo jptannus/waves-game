@@ -1,8 +1,8 @@
-# Draggable
-# 	This scene is the one that will be dragged around when dragging is happening.
-#	It is also the one that detects if it is over possible DroppableAreas.
 class_name Draggable
 extends Node2D
+## Draggable
+## 	This scene is the one that will be dragged around when dragging is happening.
+##	It is also the one that detects if it is over possible DroppableAreas.
 
 signal dropped()
 
@@ -27,7 +27,6 @@ func start_dragging(node: Node2D, origin: DroppableArea) -> void:
 	node.reparent(self)
 	node.position = Vector2(content_offset_x, content_offset_y)
 	_dragging = true
-	
 
 
 func drop() -> Node2D:
@@ -59,8 +58,8 @@ func _drop_to(node: DroppableArea) -> void:
 		node.drop(_holding)
 	_stop_dragging()
 	dropped.emit()
-	
-	
+
+
 func _stop_dragging() -> void:
 	_holding = null
 	_origin = null
@@ -74,8 +73,8 @@ func is_dragging() -> bool:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if is_dragging():
 		_hovering_area = body
-	
-	
+
+
 func _on_area_2d_body_exited(_body: Node2D) -> void:
 	if is_dragging():
 		_hovering_area = null

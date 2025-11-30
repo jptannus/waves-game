@@ -12,14 +12,15 @@ const BASE_TILE = preload("uid://bsf884j8ex5b1")
 var _resource: TileResource
 var _items: Dictionary[Item, Node2D]
 
+
 static func create_tile() -> Tile:
 	return BASE_TILE.instantiate()
 
 
 func _ready() -> void:
-	%ArtSprite.scale = Vector2(0.4,0.4)
+	%ArtSprite.scale = Vector2(0.4, 0.4)
 	var tween = get_tree().create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
-	tween.tween_property(%ArtSprite, "scale", Vector2(1.0,1.0), 0.5)
+	tween.tween_property(%ArtSprite, "scale", Vector2(1.0, 1.0), 0.5)
 
 
 func set_resource(resource: TileResource) -> void:
@@ -47,7 +48,7 @@ func transform_into_tile(tile: Tile) -> void:
 func give_item(new_item: Item) -> void:
 	if !new_item:
 		return
-	
+
 	var item_matched := false
 	var pos: Vector2
 	match (new_item):
@@ -63,7 +64,7 @@ func give_item(new_item: Item) -> void:
 		_resource.item4:
 			pos = _resource.item4_position
 			item_matched = true
-	
+
 	if item_matched:
 		if !_items.get(new_item):
 			var node = _get_item_scene(new_item, pos)

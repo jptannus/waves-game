@@ -1,6 +1,5 @@
 extends Control
 
-
 func _ready() -> void:
 	%ScoreValue.text = str(ScoreSystem.get_score())
 	%TadaSound.play()

@@ -10,14 +10,12 @@ extends Control
 @onready var combo_points_value: Label = %ComboPointsValue
 @onready var combo_multiplier_value: Label = %ComboMultiplierValue
 
-
-
 @onready var menu_button: TextureButton = %MenuButton
 
 
 func show_bird() -> void:
 	%Bird.visible = true
-	
-	
+
+
 func hide_bird() -> void:
 	%Bird.visible = false
