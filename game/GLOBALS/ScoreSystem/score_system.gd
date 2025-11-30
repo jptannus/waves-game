@@ -32,13 +32,6 @@ func add_multiplier_to_combo(amount: float) -> void:
 	)
 
 
-func _update_combo(update: Callable) -> void:
-	if !_combo_active:
-		_start_combo()
-	update.call()
-	combo_updated.emit()
-
-
 func finish_combo() -> void:
 	add_to_score(ceil(_combo_score * _combo_multiplier))
 	_reset_combo()
@@ -61,6 +54,13 @@ func get_combo_score() -> int:
 
 func get_combo_multiplier() -> float:
 	return _combo_multiplier
+
+
+func _update_combo(update: Callable) -> void:
+	if !_combo_active:
+		_start_combo()
+	update.call()
+	combo_updated.emit()
 
 
 func _start_combo() -> void:

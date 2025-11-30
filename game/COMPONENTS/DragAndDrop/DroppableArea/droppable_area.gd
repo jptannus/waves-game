@@ -45,8 +45,7 @@ func silent_drop(node: Node2D) -> bool:
 		node.position = Vector2(0, 0)
 		_update_display()
 		return true
-	else:
-		return false
+	return false
 
 
 func drag() -> Node2D:

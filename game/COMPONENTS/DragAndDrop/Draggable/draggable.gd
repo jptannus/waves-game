@@ -46,6 +46,10 @@ func drop() -> Node2D:
 	return place
 
 
+func is_dragging() -> bool:
+	return _dragging
+
+
 func _can_drop_to(node: Node2D) -> bool:
 	if node and node is DroppableArea:
 		if node.can_hold(_holding):
@@ -64,10 +68,6 @@ func _stop_dragging() -> void:
 	_holding = null
 	_origin = null
 	_dragging = false
-
-
-func is_dragging() -> bool:
-	return _dragging
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

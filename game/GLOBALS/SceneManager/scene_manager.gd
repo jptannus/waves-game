@@ -1,13 +1,13 @@
 extends CanvasLayer
 
-@onready var animation_player: AnimationPlayer = $Transition/AnimationPlayer
-@onready var full_color: ColorRect = $Transition/FullColor
-
 # List of scenes to call
 const MAIN_MENU = preload("uid://c8fshbmgebic0")
 const SETTINGS = preload("uid://cven3fatop5le")
 const GAME_OVER = preload("uid://d3o0ylb6i1bag")
 const GAME = preload("uid://8224asd1jqmf")
+
+@onready var animation_player: AnimationPlayer = $Transition/AnimationPlayer
+@onready var full_color: ColorRect = $Transition/FullColor
 
 
 # Functions
