@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ReplaceNeighborBehavior" load_steps=2 format=3 uid="uid://borvxcgf1vii2"]
+
+[ext_resource type="Script" uid="uid://cbaygqjrcnbyd" path="res://COMPONENTS/Tile/ResourceTypes/Actions/replace_neighbor_behavior.gd" id="1_vjbq8"]
+
+[resource]
+script = ExtResource("1_vjbq8")
+target_tile_name = "Sapling"
+transform_to_tile_name = "Tree"
+metadata/_custom_type_script = "uid://cbaygqjrcnbyd"

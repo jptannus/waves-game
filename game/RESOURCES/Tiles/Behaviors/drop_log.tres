@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TileBehavior" load_steps=5 format=3 uid="uid://bpfwfvotrl5hi"]
+
+[ext_resource type="Script" uid="uid://cn8whaim6wgvc" path="res://COMPONENTS/Tile/ResourceTypes/tile_behavior_action.gd" id="1_py0fx"]
+[ext_resource type="Resource" uid="uid://dbtocd0rqhamv" path="res://RESOURCES/Tiles/Behaviors/Actions/drop_log_action.tres" id="2_yrxit"]
+[ext_resource type="Script" uid="uid://dbmjl83vl3n0y" path="res://COMPONENTS/Tile/ResourceTypes/tile_behavior.gd" id="3_reoxn"]
+[ext_resource type="Resource" uid="uid://bj1vco26mw3lw" path="res://RESOURCES/Tiles/Behaviors/Triggers/destroyed_trigger.tres" id="4_ivfb8"]
+
+[resource]
+script = ExtResource("3_reoxn")
+trigger = ExtResource("4_ivfb8")
+actions = Array[ExtResource("1_py0fx")]([ExtResource("2_yrxit")])
+metadata/_custom_type_script = "uid://dbmjl83vl3n0y"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dtlr5bdidue7h"]
+
+[ext_resource type="PackedScene" uid="uid://dsjutwuudkkx6" path="res://RESOURCES/Items/Scenes/butterfly_item.tscn" id="1_s8v7t"]
+[ext_resource type="Script" uid="uid://be005fg2t5kb6" path="res://COMPONENTS/Tile/ResourceTypes/item_resource.gd" id="2_tyx54"]
+
+[resource]
+script = ExtResource("2_tyx54")
+name = "Butterfly"
+scene = ExtResource("1_s8v7t")
+points = 0
+award_multiplier = true
+multiplier = 3.0
+metadata/_custom_type_script = "uid://be005fg2t5kb6"

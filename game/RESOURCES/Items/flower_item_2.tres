@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://jn6mjjhek0l3"]
+
+[ext_resource type="PackedScene" uid="uid://ccalxunfbfsp0" path="res://RESOURCES/Items/Scenes/flower_item.tscn" id="1_6th3e"]
+[ext_resource type="Script" uid="uid://be005fg2t5kb6" path="res://COMPONENTS/Tile/ResourceTypes/item_resource.gd" id="2_3qqfe"]
+
+[resource]
+script = ExtResource("2_3qqfe")
+name = "Flower"
+scene = ExtResource("1_6th3e")
+award_points = true
+points = 100
+metadata/_custom_type_script = "uid://be005fg2t5kb6"

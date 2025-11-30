@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TileBehavior" load_steps=8 format=3 uid="uid://d12y8w4cq8hlk"]
+
+[ext_resource type="Script" uid="uid://cn8whaim6wgvc" path="res://COMPONENTS/Tile/ResourceTypes/tile_behavior_action.gd" id="1_33ye3"]
+[ext_resource type="Resource" uid="uid://dds48ssdjs6jp" path="res://RESOURCES/Tiles/Behaviors/Actions/give_apple.tres" id="2_6p4c1"]
+[ext_resource type="Resource" uid="uid://bqmo3f16na036" path="res://RESOURCES/Tiles/Behaviors/Actions/give_mosquito.tres" id="3_6p4c1"]
+[ext_resource type="Script" uid="uid://dbmjl83vl3n0y" path="res://COMPONENTS/Tile/ResourceTypes/tile_behavior.gd" id="3_n7gon"]
+[ext_resource type="Resource" uid="uid://blgojy48apeu1" path="res://RESOURCES/Tiles/Behaviors/Actions/give_seed.tres" id="4_n7gon"]
+[ext_resource type="Resource" uid="uid://cob00ikl7hvth" path="res://RESOURCES/Tiles/Behaviors/Triggers/placed_trigger.tres" id="4_sdnrg"]
+[ext_resource type="Resource" uid="uid://qyafknalov31" path="res://RESOURCES/Tiles/Behaviors/Actions/give_scorpion.tres" id="5_sdnrg"]
+
+[resource]
+script = ExtResource("3_n7gon")
+trigger = ExtResource("4_sdnrg")
+actions = Array[ExtResource("1_33ye3")]([ExtResource("2_6p4c1"), ExtResource("3_6p4c1"), ExtResource("4_n7gon"), ExtResource("5_sdnrg")])
+metadata/_custom_type_script = "uid://dbmjl83vl3n0y"

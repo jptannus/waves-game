@@ -1,0 +1,252 @@
+[gd_scene load_steps=21 format=3 uid="uid://drvkhn0cjmaka"]
+
+[ext_resource type="Texture2D" uid="uid://bb33eppx77kxy" path="res://COMPONENTS/GameUI/Assets/menu_button_normal.png" id="1_kxsqa"]
+[ext_resource type="Script" uid="uid://itpfaebgs5dq" path="res://COMPONENTS/GameUI/game_ui.gd" id="1_olytk"]
+[ext_resource type="Texture2D" uid="uid://5761sy7yggbj" path="res://COMPONENTS/GameUI/Assets/menu_button_hoverl.png" id="2_3stuh"]
+[ext_resource type="Texture2D" uid="uid://c251ekhhaqf3j" path="res://COMPONENTS/GameUI/Assets/score_ui_background.png" id="2_21pro"]
+[ext_resource type="Texture2D" uid="uid://c2d3uf57bwywb" path="res://COMPONENTS/GameUI/Assets/turn_ui_background.png" id="2_523lv"]
+[ext_resource type="FontFile" uid="uid://df7p3ip6t1dxw" path="res://RESOURCES/Fonts/NationalPark-VariableFont_wght.ttf" id="2_we8bh"]
+[ext_resource type="Texture2D" uid="uid://cufogs2vnmud6" path="res://COMPONENTS/GameUI/Assets/menu_button_pressed.png" id="3_dak8h"]
+[ext_resource type="LabelSettings" uid="uid://cuslcabild04e" path="res://RESOURCES/Fonts/game_ui_score.tres" id="3_jp0bk"]
+[ext_resource type="Texture2D" uid="uid://bb32c5cabh6lo" path="res://COMPONENTS/GameUI/Assets/score_ui_bird.png" id="4_tn3fs"]
+[ext_resource type="Texture2D" uid="uid://kvglforvp47m" path="res://COMPONENTS/GameUI/Assets/score_ui_nestfront.png" id="5_jp0bk"]
+[ext_resource type="PackedScene" uid="uid://8blb4vjvbdj4" path="res://COMPONENTS/GameUI/guide_ui.tscn" id="11_tn3fs"]
+[ext_resource type="Texture2D" uid="uid://dm54lgrm6ntny" path="res://COMPONENTS/GameUI/Assets/tile_ui_background.png" id="12_tn3fs"]
+
+[sub_resource type="FontVariation" id="FontVariation_tn3fs"]
+base_font = ExtResource("2_we8bh")
+variation_opentype = {
+2003265652: 800
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_jp0bk"]
+font = SubResource("FontVariation_tn3fs")
+font_size = 40
+outline_size = 16
+outline_color = Color(0.25882354, 0.3647059, 0.25882354, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_523lv"]
+base_font = ExtResource("2_we8bh")
+variation_opentype = {
+2003265652: 500
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_21pro"]
+font = SubResource("FontVariation_523lv")
+font_size = 24
+font_color = Color(0.21568628, 0.20784314, 0.20392157, 1)
+shadow_size = 8
+shadow_color = Color(0.4627451, 0.41960785, 0.3882353, 1)
+shadow_offset = Vector2(0, -1)
+
+[sub_resource type="FontVariation" id="FontVariation_gvkbg"]
+base_font = ExtResource("2_we8bh")
+variation_opentype = {
+2003265652: 700
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_tn3fs"]
+font = SubResource("FontVariation_gvkbg")
+font_size = 80
+font_color = Color(0.21568628, 0.20784314, 0.20392157, 1)
+shadow_size = 8
+shadow_color = Color(0.4627451, 0.41960785, 0.3882353, 1)
+shadow_offset = Vector2(0, -1)
+
+[sub_resource type="FontVariation" id="FontVariation_jp0bk"]
+base_font = ExtResource("2_we8bh")
+variation_opentype = {
+2003265652: 500
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_6d7ea"]
+font = SubResource("FontVariation_jp0bk")
+font_size = 40
+font_color = Color(0.21568628, 0.20784314, 0.20392157, 1)
+shadow_size = 8
+shadow_color = Color(0.4627451, 0.41960785, 0.3882353, 1)
+shadow_offset = Vector2(0, -1)
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_olytk")
+
+[node name="ScoreUI" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 500.0
+offset_bottom = 640.0
+mouse_filter = 2
+texture = ExtResource("2_21pro")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScoreUI"]
+layout_mode = 1
+offset_right = 519.0
+offset_bottom = 174.0
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 88
+theme_override_constants/margin_right = 148
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScoreUI/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="ScoreValue" type="Label" parent="ScoreUI/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "9,999,999"
+label_settings = ExtResource("3_jp0bk")
+horizontal_alignment = 1
+
+[node name="ComboContainer" type="HBoxContainer" parent="ScoreUI/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 24
+
+[node name="ComboPointsValue" type="Label" parent="ScoreUI/MarginContainer/VBoxContainer/ComboContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "9,999"
+label_settings = SubResource("LabelSettings_jp0bk")
+
+[node name="x" type="Label" parent="ScoreUI/MarginContainer/VBoxContainer/ComboContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "x"
+label_settings = SubResource("LabelSettings_jp0bk")
+
+[node name="ComboMultiplierValue" type="Label" parent="ScoreUI/MarginContainer/VBoxContainer/ComboContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "999"
+label_settings = SubResource("LabelSettings_jp0bk")
+
+[node name="Bird" type="TextureRect" parent="ScoreUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 178.0
+offset_top = 424.0
+offset_right = 324.0
+offset_bottom = 538.0
+texture = ExtResource("4_tn3fs")
+
+[node name="NestFront" type="TextureRect" parent="ScoreUI"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 491.0
+offset_right = 335.0
+offset_bottom = 580.0
+texture = ExtResource("5_jp0bk")
+
+[node name="TurnsUI" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -310.0
+offset_right = 380.0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("2_523lv")
+
+[node name="MarginContainer" type="MarginContainer" parent="TurnsUI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -202.0
+offset_right = 147.0
+grow_vertical = 0
+theme_override_constants/margin_left = 72
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 48
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TurnsUI/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -16
+
+[node name="TurnLabel" type="Label" parent="TurnsUI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Birds"
+label_settings = SubResource("LabelSettings_21pro")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="TurnsUI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = -24
+
+[node name="TurnCurrentValue" type="Label" parent="TurnsUI/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "99"
+label_settings = SubResource("LabelSettings_tn3fs")
+
+[node name="TurnTotalValue" type="Label" parent="TurnsUI/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "/999"
+label_settings = SubResource("LabelSettings_6d7ea")
+
+[node name="PauseUI" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="MenuButton" type="TextureButton" parent="PauseUI"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("1_kxsqa")
+texture_pressed = ExtResource("3_dak8h")
+texture_hover = ExtResource("2_3stuh")
+
+[node name="GuideUI" parent="." instance=ExtResource("11_tn3fs")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -415.0
+offset_right = 0.0
+offset_bottom = 700.0
+grow_horizontal = 0
+
+[node name="Tile" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 24
+
+[node name="TextureRect" type="TextureRect" parent="Tile"]
+layout_mode = 2
+texture = ExtResource("12_tn3fs")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

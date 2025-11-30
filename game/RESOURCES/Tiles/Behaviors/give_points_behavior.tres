@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TileBehavior" load_steps=5 format=3 uid="uid://pmoikkmx0f7w"]
+
+[ext_resource type="Script" uid="uid://cn8whaim6wgvc" path="res://COMPONENTS/Tile/ResourceTypes/tile_behavior_action.gd" id="1_qtogs"]
+[ext_resource type="Script" uid="uid://dbmjl83vl3n0y" path="res://COMPONENTS/Tile/ResourceTypes/tile_behavior.gd" id="2_goymg"]
+[ext_resource type="Resource" uid="uid://cws85l4bl40sb" path="res://RESOURCES/Tiles/Behaviors/Actions/give_points_action.tres" id="2_oxxjn"]
+[ext_resource type="Resource" uid="uid://cbotc15gr6s5i" path="res://RESOURCES/Tiles/Behaviors/Triggers/activated_trigger.tres" id="4_eypkk"]
+
+[resource]
+script = ExtResource("2_goymg")
+trigger = ExtResource("4_eypkk")
+actions = Array[ExtResource("1_qtogs")]([ExtResource("2_oxxjn")])
+metadata/_custom_type_script = "uid://dbmjl83vl3n0y"

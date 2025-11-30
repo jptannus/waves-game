@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://8224asd1jqmf"]
+
+[ext_resource type="Script" uid="uid://dwejgq8oll32o" path="res://SCREENS/Game/game.gd" id="1_n4wh7"]
+[ext_resource type="Resource" uid="uid://kkr2w8dwopoj" path="res://RESOURCES/ProbabilityList/initial_tile_list.tres" id="2_30vjv"]
+[ext_resource type="PackedScene" uid="uid://b8ltucheypojo" path="res://COMPONENTS/Board/board.tscn" id="3_4h0wa"]
+[ext_resource type="PackedScene" uid="uid://cmbc5f4py1eba" path="res://COMPONENTS/Board/TileSlot/tile_slot.tscn" id="4_g2s2e"]
+[ext_resource type="PackedScene" uid="uid://cmnmfgvwidfqp" path="res://COMPONENTS/Board/Selector/board_selector.tscn" id="5_beki2"]
+[ext_resource type="PackedScene" uid="uid://bywk5r58ir251" path="res://COMPONENTS/TileInventory/tile_inventory.tscn" id="6_ilswt"]
+[ext_resource type="PackedScene" uid="uid://bgxce3ggcqurh" path="res://COMPONENTS/TurnSystem/turn_system.tscn" id="7_c1x2w"]
+[ext_resource type="PackedScene" uid="uid://drvkhn0cjmaka" path="res://COMPONENTS/GameUI/game_ui.tscn" id="8_0xdrg"]
+[ext_resource type="PackedScene" uid="uid://chka7451mseny" path="res://COMPONENTS/Bird/bird.tscn" id="8_30vjv"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_n4wh7")
+tile_inventory_list = ExtResource("2_30vjv")
+bird_tile_delay = 0.2
+
+[node name="GameUI" parent="." instance=ExtResource("8_0xdrg")]
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Board" parent="." instance=ExtResource("3_4h0wa")]
+unique_name_in_owner = true
+position = Vector2(570, 108)
+time_slot_scene = ExtResource("4_g2s2e")
+board_selector_scene = ExtResource("5_beki2")
+tile_width = 160.0
+tile_height = 160.0
+tile_spacing = 4.0
+
+[node name="TileInventory" parent="." instance=ExtResource("6_ilswt")]
+unique_name_in_owner = true
+position = Vector2(1648, 871)
+max_size = 2
+
+[node name="TurnSystem" parent="." instance=ExtResource("7_c1x2w")]
+unique_name_in_owner = true
+total_rounds = 11
+total_turns_per_round = 10
+turn_time_based = false
+
+[node name="Bird" parent="." instance=ExtResource("8_30vjv")]
+unique_name_in_owner = true
+position = Vector2(-196, 359)
+
+[connection signal="dropped" from="Board" to="." method="_on_board_dropped"]
+[connection signal="mouse_pressed" from="Board" to="." method="_on_board_mouse_pressed"]
+[connection signal="mouse_pressed" from="TileInventory" to="." method="_on_tile_inventory_mouse_pressed"]
+[connection signal="tile_taken" from="TileInventory" to="." method="_on_tile_inventory_tile_taken"]

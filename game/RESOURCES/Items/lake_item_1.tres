@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dwn3goeuwx4w4"]
+
+[ext_resource type="PackedScene" uid="uid://xjya24p1pin5" path="res://RESOURCES/Items/Scenes/fish_item.tscn" id="1_ed6uu"]
+[ext_resource type="Script" uid="uid://be005fg2t5kb6" path="res://COMPONENTS/Tile/ResourceTypes/item_resource.gd" id="2_1a0yp"]
+
+[resource]
+script = ExtResource("2_1a0yp")
+name = "Fish"
+scene = ExtResource("1_ed6uu")
+award_points = true
+points = 100
+metadata/_custom_type_script = "uid://be005fg2t5kb6"

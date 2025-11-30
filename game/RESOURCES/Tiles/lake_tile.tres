@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="TileResource" load_steps=10 format=3 uid="uid://b0sope82x2u18"]
+
+[ext_resource type="Texture2D" uid="uid://bjdygovkl0seh" path="res://RESOURCES/Tiles/Assets/lake_tile.png" id="1_veujx"]
+[ext_resource type="Script" uid="uid://dbmjl83vl3n0y" path="res://COMPONENTS/Tile/ResourceTypes/tile_behavior.gd" id="2_471i2"]
+[ext_resource type="Script" uid="uid://cwenv8ffqjly5" path="res://COMPONENTS/Tile/ResourceTypes/tile_resource.gd" id="3_70iwl"]
+[ext_resource type="Resource" uid="uid://pmoikkmx0f7w" path="res://RESOURCES/Tiles/Behaviors/give_points_behavior.tres" id="3_er7vt"]
+[ext_resource type="Resource" uid="uid://dwn3goeuwx4w4" path="res://RESOURCES/Items/lake_item_1.tres" id="3_lf4de"]
+[ext_resource type="Resource" uid="uid://dx1tmcm85csfr" path="res://RESOURCES/Items/lake_item_2.tres" id="4_er7vt"]
+[ext_resource type="Resource" uid="uid://ca263pi0ukah" path="res://RESOURCES/Tiles/Behaviors/lake_give_item_behavior.tres" id="4_xopyi"]
+[ext_resource type="Resource" uid="uid://dd1eweybfc6wj" path="res://RESOURCES/Items/lake_item_3.tres" id="5_xopyi"]
+[ext_resource type="Resource" uid="uid://yqi20b3517sy" path="res://RESOURCES/Items/lake_item_4.tres" id="6_ng01l"]
+
+[resource]
+script = ExtResource("3_70iwl")
+name = "Lake"
+art = ExtResource("1_veujx")
+printable_string = "L"
+behaviors = Array[ExtResource("2_471i2")]([ExtResource("3_er7vt"), ExtResource("4_xopyi")])
+base_points = 20
+item1 = ExtResource("3_lf4de")
+item1_position = Vector2i(40, 72)
+item2 = ExtResource("4_er7vt")
+item2_position = Vector2i(56, 108)
+item3 = ExtResource("5_xopyi")
+item3_position = Vector2i(104, 64)
+item4 = ExtResource("6_ng01l")
+item4_position = Vector2i(112, 96)
+metadata/_custom_type_script = "uid://cwenv8ffqjly5"

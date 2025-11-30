@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TileBehavior" load_steps=5 format=3 uid="uid://cpftly4nsbi71"]
+
+[ext_resource type="Script" uid="uid://cn8whaim6wgvc" path="res://COMPONENTS/Tile/ResourceTypes/tile_behavior_action.gd" id="1_05sg7"]
+[ext_resource type="Script" uid="uid://dbmjl83vl3n0y" path="res://COMPONENTS/Tile/ResourceTypes/tile_behavior.gd" id="2_16dt4"]
+[ext_resource type="Resource" uid="uid://borvxcgf1vii2" path="res://RESOURCES/Tiles/Behaviors/Actions/grow_tree_action.tres" id="2_opjpi"]
+[ext_resource type="Resource" uid="uid://cob00ikl7hvth" path="res://RESOURCES/Tiles/Behaviors/Triggers/placed_trigger.tres" id="3_16dt4"]
+
+[resource]
+script = ExtResource("2_16dt4")
+trigger = ExtResource("3_16dt4")
+actions = Array[ExtResource("1_05sg7")]([ExtResource("2_opjpi")])
+description = "Grow a neighbord empty tile into a tree"
+metadata/_custom_type_script = "uid://dbmjl83vl3n0y"

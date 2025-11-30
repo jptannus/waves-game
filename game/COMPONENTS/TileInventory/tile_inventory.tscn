@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bywk5r58ir251"]
+
+[ext_resource type="Script" uid="uid://hm1auwhie5ev" path="res://COMPONENTS/TileInventory/tile_inventory.gd" id="1_rawhm"]
+
+[node name="TileInventory" type="Node2D"]
+script = ExtResource("1_rawhm")

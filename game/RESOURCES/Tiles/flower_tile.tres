@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="TileResource" load_steps=9 format=3 uid="uid://bm12xc3ypxv72"]
+
+[ext_resource type="Texture2D" uid="uid://crw7d81b3e3cf" path="res://RESOURCES/Tiles/Assets/flower_tile.png" id="1_aikkc"]
+[ext_resource type="Script" uid="uid://dbmjl83vl3n0y" path="res://COMPONENTS/Tile/ResourceTypes/tile_behavior.gd" id="2_2xd8p"]
+[ext_resource type="Script" uid="uid://cwenv8ffqjly5" path="res://COMPONENTS/Tile/ResourceTypes/tile_resource.gd" id="3_5kauj"]
+[ext_resource type="Resource" uid="uid://pmoikkmx0f7w" path="res://RESOURCES/Tiles/Behaviors/give_points_behavior.tres" id="3_d5x18"]
+[ext_resource type="Resource" uid="uid://cscdpm3gg64ju" path="res://RESOURCES/Items/flower_item_1.tres" id="3_i48ff"]
+[ext_resource type="Resource" uid="uid://jn6mjjhek0l3" path="res://RESOURCES/Items/flower_item_2.tres" id="4_d5x18"]
+[ext_resource type="Resource" uid="uid://1wynutuo8v04" path="res://RESOURCES/Tiles/Behaviors/flower_give_item_behavior.tres" id="4_eui6v"]
+[ext_resource type="Resource" uid="uid://dhj5oira0p3su" path="res://RESOURCES/Items/flower_item_3.tres" id="5_eui6v"]
+
+[resource]
+script = ExtResource("3_5kauj")
+name = "Flower"
+art = ExtResource("1_aikkc")
+printable_string = "F"
+behaviors = Array[ExtResource("2_2xd8p")]([ExtResource("3_d5x18"), ExtResource("4_eui6v")])
+base_points = 30
+item1 = ExtResource("3_i48ff")
+item1_position = Vector2i(28, 34)
+item2 = ExtResource("4_d5x18")
+item2_position = Vector2i(52, 118)
+item3 = ExtResource("5_eui6v")
+item3_position = Vector2i(120, 106)
+metadata/_custom_type_script = "uid://cwenv8ffqjly5"

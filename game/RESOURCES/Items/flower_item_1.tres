@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cscdpm3gg64ju"]
+
+[ext_resource type="PackedScene" uid="uid://d4gham24s3xdi" path="res://RESOURCES/Items/Scenes/seed_item.tscn" id="1_5ru0l"]
+[ext_resource type="Script" uid="uid://be005fg2t5kb6" path="res://COMPONENTS/Tile/ResourceTypes/item_resource.gd" id="2_vcqwy"]
+
+[resource]
+script = ExtResource("2_vcqwy")
+name = "Seed"
+scene = ExtResource("1_5ru0l")
+award_points = true
+points = 200
+metadata/_custom_type_script = "uid://be005fg2t5kb6"

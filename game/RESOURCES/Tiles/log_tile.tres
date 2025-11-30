@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="TileResource" load_steps=9 format=3 uid="uid://dmvdfky5y47tr"]
+
+[ext_resource type="Texture2D" uid="uid://dar8cohr42dci" path="res://RESOURCES/Tiles/Assets/log_tile.png" id="1_u8c0p"]
+[ext_resource type="Script" uid="uid://dbmjl83vl3n0y" path="res://COMPONENTS/Tile/ResourceTypes/tile_behavior.gd" id="2_psi25"]
+[ext_resource type="Resource" uid="uid://pmoikkmx0f7w" path="res://RESOURCES/Tiles/Behaviors/give_points_behavior.tres" id="3_5wmcw"]
+[ext_resource type="Script" uid="uid://cwenv8ffqjly5" path="res://COMPONENTS/Tile/ResourceTypes/tile_resource.gd" id="3_6fmvg"]
+[ext_resource type="Resource" uid="uid://cu81yed3aa7jl" path="res://RESOURCES/Items/log_item_1.tres" id="3_etb3t"]
+[ext_resource type="Resource" uid="uid://cekwggkn8j34u" path="res://RESOURCES/Items/log_item_2.tres" id="4_5wmcw"]
+[ext_resource type="Resource" uid="uid://bbkm8if1m78si" path="res://RESOURCES/Tiles/Behaviors/log_give_item_behavior.tres" id="4_wt2gq"]
+[ext_resource type="Resource" uid="uid://vpd8rodu6o4m" path="res://RESOURCES/Items/log_item_3.tres" id="5_wt2gq"]
+
+[resource]
+script = ExtResource("3_6fmvg")
+name = "Log"
+art = ExtResource("1_u8c0p")
+printable_string = "L"
+behaviors = Array[ExtResource("2_psi25")]([ExtResource("3_5wmcw"), ExtResource("4_wt2gq")])
+base_points = 50
+item1 = ExtResource("3_etb3t")
+item1_position = Vector2i(32, 56)
+item2 = ExtResource("4_5wmcw")
+item2_position = Vector2i(92, 48)
+item3 = ExtResource("5_wt2gq")
+item3_position = Vector2i(92, 112)
+metadata/_custom_type_script = "uid://cwenv8ffqjly5"

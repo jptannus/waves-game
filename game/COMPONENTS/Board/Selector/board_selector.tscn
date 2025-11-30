@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmnmfgvwidfqp"]
+
+[ext_resource type="Script" uid="uid://dqqhd686ltbpd" path="res://COMPONENTS/Board/Selector/board_selector.gd" id="1_aattv"]
+[ext_resource type="Texture2D" uid="uid://bp0ku3e4q0e1i" path="res://COMPONENTS/Board/Selector/Assets/arrow.png" id="2_aattv"]
+
+[node name="Selector" type="Node2D"]
+script = ExtResource("1_aattv")
+
+[node name="Arrow" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, 128)
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_aattv")
+
+[connection signal="pressed" from="Arrow" to="." method="_on_texture_button_pressed"]

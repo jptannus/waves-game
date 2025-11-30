@@ -1,0 +1,335 @@
+[gd_scene load_steps=24 format=3 uid="uid://8blb4vjvbdj4"]
+
+[ext_resource type="Theme" uid="uid://4tg6bw6qskp5" path="res://RESOURCES/Themes/main_theme.tres" id="1_6awb3"]
+[ext_resource type="Texture2D" uid="uid://s747pa4krhh6" path="res://SCREENS/MainMenu/Assets/ui_close.png" id="1_ftdxi"]
+[ext_resource type="Script" uid="uid://c5e2l0r2rftyj" path="res://COMPONENTS/GameUI/guide_ui.gd" id="1_u7eem"]
+[ext_resource type="Texture2D" uid="uid://8k335yq2e3x8" path="res://RESOURCES/Tiles/Assets/sapling_tile.png" id="2_6asc8"]
+[ext_resource type="PackedScene" uid="uid://dr830t52dqtny" path="res://COMPONENTS/GameUI/guide_item.tscn" id="2_it66w"]
+[ext_resource type="Texture2D" uid="uid://c8c7yd80crdyd" path="res://RESOURCES/Tiles/Assets/tree_tile.png" id="3_0nxpy"]
+[ext_resource type="Texture2D" uid="uid://cajnvgns2qg52" path="res://RESOURCES/Tiles/Assets/bud_tile.png" id="4_hv6yu"]
+[ext_resource type="Texture2D" uid="uid://crw7d81b3e3cf" path="res://RESOURCES/Tiles/Assets/flower_tile.png" id="5_o7ram"]
+[ext_resource type="Texture2D" uid="uid://dmueagoad8ye3" path="res://COMPONENTS/GameUI/Assets/bird_guide.png" id="7_5qi6l"]
+[ext_resource type="Texture2D" uid="uid://dar8cohr42dci" path="res://RESOURCES/Tiles/Assets/log_tile.png" id="7_a4ld7"]
+[ext_resource type="Texture2D" uid="uid://bjdygovkl0seh" path="res://RESOURCES/Tiles/Assets/lake_tile.png" id="8_hbpdc"]
+[ext_resource type="Texture2D" uid="uid://d4ydcxis0yts" path="res://RESOURCES/Items/Assets/fish_item.png" id="9_s4xey"]
+[ext_resource type="Texture2D" uid="uid://uoepi3inmfmq" path="res://RESOURCES/Items/Assets/lotus_item.png" id="10_yyhkw"]
+[ext_resource type="Texture2D" uid="uid://cgkxalbx60fkp" path="res://RESOURCES/Items/Assets/mosquito_item.png" id="11_5qi6l"]
+[ext_resource type="Texture2D" uid="uid://baenfqty1rcqv" path="res://RESOURCES/Items/Assets/snail_item.png" id="12_ftdxi"]
+[ext_resource type="Texture2D" uid="uid://cer54mprte5xe" path="res://RESOURCES/Items/Assets/butterfly_item.png" id="13_u7eem"]
+[ext_resource type="Texture2D" uid="uid://bwdi2f2x605oa" path="res://RESOURCES/Items/Assets/ant_item.png" id="14_sqc5a"]
+[ext_resource type="Texture2D" uid="uid://cjbktapggqaqc" path="res://RESOURCES/Items/Assets/flower_item.png" id="15_vt1n7"]
+[ext_resource type="Texture2D" uid="uid://blc8pnj3rcevx" path="res://RESOURCES/Items/Assets/seed_item.png" id="16_n3mf0"]
+[ext_resource type="Texture2D" uid="uid://c3i5op537x2d6" path="res://RESOURCES/Items/Assets/bee_item.png" id="17_bkit1"]
+[ext_resource type="Texture2D" uid="uid://bs4y5nnxo2aq6" path="res://RESOURCES/Items/Assets/mushroom_item.png" id="18_l0cnk"]
+[ext_resource type="Texture2D" uid="uid://ch4j0j5gvy3s" path="res://RESOURCES/Items/Assets/scorpion_item.png" id="19_1nulb"]
+[ext_resource type="Texture2D" uid="uid://dade62qk8rmmh" path="res://RESOURCES/Items/Assets/bug_item.png" id="20_tiiex"]
+
+[node name="GuideUI" type="MarginContainer"]
+offset_right = 421.0
+offset_bottom = 1220.0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+script = ExtResource("1_u7eem")
+
+[node name="OpenGuideButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("1_6awb3")
+text = "Guide"
+
+[node name="Guide" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="CloseGuideButton" type="TextureButton" parent="Guide"]
+unique_name_in_owner = true
+modulate = Color(0.7286783, 0.2915315, 0.46618354, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource("1_ftdxi")
+
+[node name="PanelContainer" type="PanelContainer" parent="Guide"]
+layout_mode = 2
+theme = ExtResource("1_6awb3")
+
+[node name="MarginContainer" type="MarginContainer" parent="Guide/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Guide/PanelContainer/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Guide/PanelContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="GuideItem" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem/Recipe" index="0"]
+texture = ExtResource("2_6asc8")
+
+[node name="TextureRect2" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem/Recipe" index="2"]
+texture = ExtResource("2_6asc8")
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem/Result" index="0"]
+texture = ExtResource("3_0nxpy")
+
+[node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem/Score" index="0"]
+text = "+30"
+
+[node name="GuideItem2" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem2/Recipe" index="0"]
+texture = ExtResource("4_hv6yu")
+
+[node name="TextureRect2" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem2/Recipe" index="2"]
+texture = ExtResource("4_hv6yu")
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem2/Result" index="0"]
+texture = ExtResource("5_o7ram")
+
+[node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem2/Score" index="0"]
+text = "+30"
+
+[node name="GuideItem3" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem3/Recipe" index="0"]
+texture = ExtResource("3_0nxpy")
+
+[node name="TextureRect2" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem3/Recipe" index="2"]
+texture = ExtResource("7_5qi6l")
+expand_mode = 2
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem3/Result" index="0"]
+texture = ExtResource("7_a4ld7")
+
+[node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem3/Score" index="0"]
+text = "+50"
+
+[node name="GuideItem4" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem4/Recipe" index="0"]
+texture = ExtResource("8_hbpdc")
+
+[node name="TextureRect2" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem4/Recipe" index="2"]
+texture = ExtResource("8_hbpdc")
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem4/Result" index="0"]
+texture = ExtResource("9_s4xey")
+
+[node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem4/Score" index="0"]
+text = "+100"
+
+[node name="GuideItem5" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem5/Recipe" index="0"]
+texture = ExtResource("5_o7ram")
+
+[node name="TextureRect2" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem5/Recipe" index="2"]
+texture = ExtResource("8_hbpdc")
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem5/Result" index="0"]
+texture = ExtResource("10_yyhkw")
+
+[node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem5/Score" index="0"]
+text = "+200"
+
+[node name="GuideItem6" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem6/Recipe" index="0"]
+texture = ExtResource("3_0nxpy")
+
+[node name="TextureRect2" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem6/Recipe" index="2"]
+texture = ExtResource("8_hbpdc")
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem6/Result" index="0"]
+texture = ExtResource("11_5qi6l")
+
+[node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem6/Score" index="0"]
+text = "x2"
+
+[node name="GuideItem7" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem7/Recipe" index="0"]
+texture = ExtResource("7_a4ld7")
+
+[node name="TextureRect2" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem7/Recipe" index="2"]
+texture = ExtResource("8_hbpdc")
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem7/Result" index="0"]
+texture = ExtResource("12_ftdxi")
+
+[node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem7/Score" index="0"]
+text = "x3"
+
+[node name="GuideItem8" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem8/Recipe" index="0"]
+texture = ExtResource("8_hbpdc")
+
+[node name="TextureRect2" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem8/Recipe" index="2"]
+texture = ExtResource("3_0nxpy")
+
+[node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem8/Score" index="0"]
+text = "+100"
+
+[node name="GuideItem9" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem9/Recipe" index="0"]
+texture = ExtResource("5_o7ram")
+
+[node name="TextureRect2" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem9/Recipe" index="2"]
+texture = ExtResource("3_0nxpy")
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem9/Result" index="0"]
+texture = ExtResource("13_u7eem")
+
+[node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem9/Score" index="0"]
+text = "x3"
+
+[node name="GuideItem10" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem10/Recipe" index="0"]
+texture = ExtResource("7_a4ld7")
+
+[node name="TextureRect2" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem10/Recipe" index="2"]
+texture = ExtResource("3_0nxpy")
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem10/Result" index="0"]
+texture = ExtResource("14_sqc5a")
+
+[node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem10/Score" index="0"]
+text = "x7"
+
+[node name="GuideItem11" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem11/Recipe" index="0"]
+texture = ExtResource("8_hbpdc")
+
+[node name="TextureRect2" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem11/Recipe" index="2"]
+texture = ExtResource("5_o7ram")
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem11/Result" index="0"]
+texture = ExtResource("15_vt1n7")
+
+[node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem11/Score" index="0"]
+text = "+100"
+
+[node name="GuideItem12" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem12/Recipe" index="0"]
+texture = ExtResource("3_0nxpy")
+
+[node name="TextureRect2" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem12/Recipe" index="2"]
+texture = ExtResource("5_o7ram")
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem12/Result" index="0"]
+texture = ExtResource("16_n3mf0")
+
+[node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem12/Score" index="0"]
+text = "+200"
+
+[node name="GuideItem13" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem13/Recipe" index="0"]
+texture = ExtResource("7_a4ld7")
+
+[node name="TextureRect2" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem13/Recipe" index="2"]
+texture = ExtResource("5_o7ram")
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem13/Result" index="0"]
+texture = ExtResource("17_bkit1")
+
+[node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem13/Score" index="0"]
+text = "x3"
+
+[node name="GuideItem14" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem14/Recipe" index="0"]
+texture = ExtResource("8_hbpdc")
+
+[node name="TextureRect2" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem14/Recipe" index="2"]
+texture = ExtResource("7_a4ld7")
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem14/Result" index="0"]
+texture = ExtResource("18_l0cnk")
+
+[node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem14/Score" index="0"]
+text = "+2000"
+
+[node name="GuideItem15" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem15/Recipe" index="0"]
+texture = ExtResource("3_0nxpy")
+
+[node name="TextureRect2" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem15/Recipe" index="2"]
+texture = ExtResource("7_a4ld7")
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem15/Result" index="0"]
+texture = ExtResource("19_1nulb")
+
+[node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem15/Score" index="0"]
+text = "x5"
+
+[node name="GuideItem16" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem16/Recipe" index="0"]
+texture = ExtResource("5_o7ram")
+
+[node name="TextureRect2" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem16/Recipe" index="2"]
+texture = ExtResource("7_a4ld7")
+
+[node name="TextureRect" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem16/Result" index="0"]
+texture = ExtResource("20_tiiex")
+
+[node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem16/Score" index="0"]
+text = "x7"
+
+[connection signal="pressed" from="OpenGuideButton" to="." method="_on_open_guide_button_pressed"]
+[connection signal="pressed" from="Guide/CloseGuideButton" to="." method="_on_close_guide_button_pressed"]
+
+[editable path="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem"]
+[editable path="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem2"]
+[editable path="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem3"]
+[editable path="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem4"]
+[editable path="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem5"]
+[editable path="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem6"]
+[editable path="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem7"]
+[editable path="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem8"]
+[editable path="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem9"]
+[editable path="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem10"]
+[editable path="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem11"]
+[editable path="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem12"]
+[editable path="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem13"]
+[editable path="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem14"]
+[editable path="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem15"]
+[editable path="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem16"]

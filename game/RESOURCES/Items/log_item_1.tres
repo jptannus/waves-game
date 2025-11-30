@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cu81yed3aa7jl"]
+
+[ext_resource type="PackedScene" uid="uid://k05c4ylk8s03" path="res://RESOURCES/Items/Scenes/mushroom_item.tscn" id="1_tk7jx"]
+[ext_resource type="Script" uid="uid://be005fg2t5kb6" path="res://COMPONENTS/Tile/ResourceTypes/item_resource.gd" id="2_kakqm"]
+
+[resource]
+script = ExtResource("2_kakqm")
+name = "Mushroom"
+scene = ExtResource("1_tk7jx")
+award_points = true
+points = 2000
+metadata/_custom_type_script = "uid://be005fg2t5kb6"

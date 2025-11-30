@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DropTileAction" load_steps=2 format=3 uid="uid://dbtocd0rqhamv"]
+
+[ext_resource type="Script" uid="uid://b75nwnigk66gy" path="res://COMPONENTS/Tile/ResourceTypes/Actions/drop_tile.gd" id="1_of0wu"]
+
+[resource]
+script = ExtResource("1_of0wu")
+drop_tile_name = "Log"
+drop_probability = 0.5
+metadata/_custom_type_script = "uid://b75nwnigk66gy"

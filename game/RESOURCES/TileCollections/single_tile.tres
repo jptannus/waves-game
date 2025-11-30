@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TileCollection" load_steps=4 format=3 uid="uid://rul8llm40vcp"]
+
+[ext_resource type="Script" uid="uid://bbe7pni88arws" path="res://COMPONENTS/Tile/ResourceTypes/tile_collection.gd" id="1_0m8rw"]
+[ext_resource type="Script" uid="uid://cwenv8ffqjly5" path="res://COMPONENTS/Tile/ResourceTypes/tile_resource.gd" id="2_xgcqu"]
+[ext_resource type="Resource" uid="uid://br2jfpjdc2aig" path="res://RESOURCES/Tiles/sapling_tile.tres" id="3_xgcqu"]
+
+[resource]
+script = ExtResource("1_0m8rw")
+tiles = Array[ExtResource("2_xgcqu")]([ExtResource("3_xgcqu")])
+metadata/_custom_type_script = "uid://bbe7pni88arws"

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://e2b0vfunquj2"]
+
+[ext_resource type="Script" uid="uid://b87gqrvkaiems" path="res://COMPONENTS/TrashCan/trash_can.gd" id="1_2we6m"]
+[ext_resource type="PackedScene" uid="uid://dg26dktbbq5sn" path="res://COMPONENTS/DragAndDrop/DroppableArea/droppable_area.tscn" id="2_bwiuh"]
+[ext_resource type="Texture2D" uid="uid://c8xhln5n5jcga" path="res://COMPONENTS/TrashCan/trash-solid.svg" id="3_bwiuh"]
+
+[node name="TrashCan" type="Node2D"]
+script = ExtResource("1_2we6m")
+
+[node name="DropableArea" parent="." instance=ExtResource("2_bwiuh")]
+unique_name_in_owner = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(64, 63)
+scale = Vector2(4.875, 4.875)
+texture = ExtResource("3_bwiuh")
+
+[connection signal="dropped" from="DropableArea" to="." method="_on_dropable_area_dropped"]

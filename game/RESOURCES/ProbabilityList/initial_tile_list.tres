@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="ProbabilityList" load_steps=15 format=3 uid="uid://kkr2w8dwopoj"]
+
+[ext_resource type="Script" uid="uid://dkjqdjtghi5ro" path="res://COMPONENTS/ProbabilityList/probability_item.gd" id="1_rfl4r"]
+[ext_resource type="Script" uid="uid://ft64mua17quy" path="res://COMPONENTS/ProbabilityList/probability_list.gd" id="2_2mrmf"]
+[ext_resource type="Resource" uid="uid://qr0u55c50jua" path="res://RESOURCES/Tiles/bud_tile.tres" id="2_i7x3w"]
+[ext_resource type="Resource" uid="uid://br2jfpjdc2aig" path="res://RESOURCES/Tiles/sapling_tile.tres" id="3_oi7gg"]
+[ext_resource type="Resource" uid="uid://b0sope82x2u18" path="res://RESOURCES/Tiles/lake_tile.tres" id="4_xcpfb"]
+[ext_resource type="Resource" uid="uid://bm12xc3ypxv72" path="res://RESOURCES/Tiles/flower_tile.tres" id="5_oi7gg"]
+[ext_resource type="Resource" uid="uid://bme6rxh0q108t" path="res://RESOURCES/Tiles/tree_tile.tres" id="6_xcpfb"]
+[ext_resource type="Resource" uid="uid://dmvdfky5y47tr" path="res://RESOURCES/Tiles/log_tile.tres" id="7_54mvd"]
+
+[sub_resource type="Resource" id="Resource_54mvd"]
+script = ExtResource("1_rfl4r")
+value = ExtResource("2_i7x3w")
+probability = 0.3
+metadata/_custom_type_script = "uid://dkjqdjtghi5ro"
+
+[sub_resource type="Resource" id="Resource_xtoti"]
+script = ExtResource("1_rfl4r")
+value = ExtResource("3_oi7gg")
+probability = 0.3
+metadata/_custom_type_script = "uid://dkjqdjtghi5ro"
+
+[sub_resource type="Resource" id="Resource_8xm8c"]
+script = ExtResource("1_rfl4r")
+value = ExtResource("4_xcpfb")
+probability = 0.3
+metadata/_custom_type_script = "uid://dkjqdjtghi5ro"
+
+[sub_resource type="Resource" id="Resource_xcpfb"]
+script = ExtResource("1_rfl4r")
+value = ExtResource("5_oi7gg")
+probability = 0.04
+metadata/_custom_type_script = "uid://dkjqdjtghi5ro"
+
+[sub_resource type="Resource" id="Resource_tmqs6"]
+script = ExtResource("1_rfl4r")
+value = ExtResource("6_xcpfb")
+probability = 0.04
+metadata/_custom_type_script = "uid://dkjqdjtghi5ro"
+
+[sub_resource type="Resource" id="Resource_yobp8"]
+script = ExtResource("1_rfl4r")
+value = ExtResource("7_54mvd")
+probability = 0.02
+metadata/_custom_type_script = "uid://dkjqdjtghi5ro"
+
+[resource]
+script = ExtResource("2_2mrmf")
+list = Array[ExtResource("1_rfl4r")]([SubResource("Resource_54mvd"), SubResource("Resource_xtoti"), SubResource("Resource_8xm8c"), SubResource("Resource_xcpfb"), SubResource("Resource_tmqs6"), SubResource("Resource_yobp8")])
+metadata/_custom_type_script = "uid://ft64mua17quy"

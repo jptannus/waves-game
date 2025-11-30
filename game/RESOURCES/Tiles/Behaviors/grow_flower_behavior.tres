@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TileBehavior" load_steps=5 format=3 uid="uid://dvkngqm7ne8cc"]
+
+[ext_resource type="Script" uid="uid://cn8whaim6wgvc" path="res://COMPONENTS/Tile/ResourceTypes/tile_behavior_action.gd" id="1_s2wgs"]
+[ext_resource type="Resource" uid="uid://dwa3nvb7spo7q" path="res://RESOURCES/Tiles/Behaviors/Actions/grow_flower_action.tres" id="2_s2wgs"]
+[ext_resource type="Script" uid="uid://dbmjl83vl3n0y" path="res://COMPONENTS/Tile/ResourceTypes/tile_behavior.gd" id="3_vneeu"]
+[ext_resource type="Resource" uid="uid://cob00ikl7hvth" path="res://RESOURCES/Tiles/Behaviors/Triggers/placed_trigger.tres" id="4_3s3xh"]
+
+[resource]
+script = ExtResource("3_vneeu")
+trigger = ExtResource("4_3s3xh")
+actions = Array[ExtResource("1_s2wgs")]([ExtResource("2_s2wgs")])
+metadata/_custom_type_script = "uid://dbmjl83vl3n0y"

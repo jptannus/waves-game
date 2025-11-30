@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="TileResource" load_steps=6 format=3 uid="uid://qr0u55c50jua"]
+
+[ext_resource type="Texture2D" uid="uid://cajnvgns2qg52" path="res://RESOURCES/Tiles/Assets/bud_tile.png" id="1_vo15j"]
+[ext_resource type="Script" uid="uid://dbmjl83vl3n0y" path="res://COMPONENTS/Tile/ResourceTypes/tile_behavior.gd" id="2_bmjqd"]
+[ext_resource type="Script" uid="uid://cwenv8ffqjly5" path="res://COMPONENTS/Tile/ResourceTypes/tile_resource.gd" id="3_64f6c"]
+[ext_resource type="Resource" uid="uid://pmoikkmx0f7w" path="res://RESOURCES/Tiles/Behaviors/give_points_behavior.tres" id="3_bmjqd"]
+[ext_resource type="Resource" uid="uid://dvkngqm7ne8cc" path="res://RESOURCES/Tiles/Behaviors/grow_flower_behavior.tres" id="4_64f6c"]
+
+[resource]
+script = ExtResource("3_64f6c")
+name = "Flower Bud"
+art = ExtResource("1_vo15j")
+printable_string = "B"
+behaviors = Array[ExtResource("2_bmjqd")]([ExtResource("3_bmjqd"), ExtResource("4_64f6c")])
+base_points = 10
+metadata/_custom_type_script = "uid://cwenv8ffqjly5"

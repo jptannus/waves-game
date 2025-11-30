@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GiveItemBehavior" load_steps=2 format=3 uid="uid://qyafknalov31"]
+
+[ext_resource type="Script" uid="uid://dy1s53mtopjhq" path="res://COMPONENTS/Tile/ResourceTypes/Actions/give_item_behavior.gd" id="1_a5t3a"]
+
+[resource]
+script = ExtResource("1_a5t3a")
+target_tile_name = "Log"
+item_name = "Scorpion"
+metadata/_custom_type_script = "uid://dy1s53mtopjhq"

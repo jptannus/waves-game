@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://clo1x1p02cdk2"]
+
+[ext_resource type="Script" uid="uid://cuya85bbfk4ra" path="res://COMPONENTS/DragAndDrop/DraggableStack/draggable_stack.gd" id="1_xubfx"]
+[ext_resource type="PackedScene" uid="uid://dg26dktbbq5sn" path="res://COMPONENTS/DragAndDrop/DroppableArea/droppable_area.tscn" id="2_lv4sx"]
+
+[node name="DraggableStack" type="Node2D"]
+script = ExtResource("1_xubfx")
+
+[node name="DropableArea" parent="." instance=ExtResource("2_lv4sx")]
+unique_name_in_owner = true
+
+[connection signal="content_dragged" from="DropableArea" to="." method="_on_dropable_area_content_dragged"]
+[connection signal="drop_resolved" from="DropableArea" to="." method="_on_dropable_area_drop_resolved"]
+[connection signal="mouse_pressed" from="DropableArea" to="." method="_on_dropable_area_mouse_pressed"]

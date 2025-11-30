@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cebuhrrghujgo"]
+
+[ext_resource type="Script" uid="uid://8ee6x3s420ya" path="res://GLOBALS/TileDatabase/tile_database.gd" id="1_yf1vy"]
+[ext_resource type="Resource" uid="uid://voeqxijnry4k" path="res://RESOURCES/TileCollections/all_possible_tiles.tres" id="2_apssq"]
+
+[node name="TileDatabase" type="Node"]
+script = ExtResource("1_yf1vy")
+available_tiles = ExtResource("2_apssq")

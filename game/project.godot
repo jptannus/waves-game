@@ -1,0 +1,43 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Winged Animals Visit Every Season"
+run/main_scene="uid://c8fshbmgebic0"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+config/icon="res://icon.svg"
+
+[autoload]
+
+SceneManager="*res://GLOBALS/SceneManager/scene_manager.tscn"
+TileDatabase="*res://GLOBALS/TileDatabase/tile_database.tscn"
+ItemDatabase="*res://GLOBALS/ItemDatabase/item_database.tscn"
+ScoreSystem="*res://GLOBALS/ScoreSystem/score_system.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
+
+[global_group]
+
+tile_droppable="Places where tiles can be dropped"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+viewport/hdr_2d=true
+environment/defaults/default_clear_color=Color(0.6431373, 0.7882353, 0.6392157, 1)

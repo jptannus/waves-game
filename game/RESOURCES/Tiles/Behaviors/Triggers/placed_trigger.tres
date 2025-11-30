@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TileBehaviorTrigger" load_steps=2 format=3 uid="uid://cob00ikl7hvth"]
+
+[ext_resource type="Script" uid="uid://diu70ge6mcble" path="res://COMPONENTS/Tile/ResourceTypes/tile_behaviour_trigger.gd" id="1_2u0p0"]
+
+[resource]
+script = ExtResource("1_2u0p0")
+life_cycle = Array[int]([1])
+metadata/_custom_type_script = "uid://diu70ge6mcble"

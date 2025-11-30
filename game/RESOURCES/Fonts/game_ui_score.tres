@@ -1,0 +1,15 @@
+[gd_resource type="LabelSettings" load_steps=3 format=3 uid="uid://cuslcabild04e"]
+
+[ext_resource type="FontFile" uid="uid://df7p3ip6t1dxw" path="res://RESOURCES/Fonts/NationalPark-VariableFont_wght.ttf" id="1_3758k"]
+
+[sub_resource type="FontVariation" id="FontVariation_ce7j4"]
+base_font = ExtResource("1_3758k")
+variation_opentype = {
+2003265652: 700
+}
+
+[resource]
+font = SubResource("FontVariation_ce7j4")
+font_size = 64
+outline_size = 32
+outline_color = Color(0.25882354, 0.3647059, 0.25882354, 1)

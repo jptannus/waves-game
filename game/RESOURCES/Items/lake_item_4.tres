@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://yqi20b3517sy"]
+
+[ext_resource type="PackedScene" uid="uid://crxyby2j5q2m4" path="res://RESOURCES/Items/Scenes/mosquito_item.tscn" id="1_ypcya"]
+[ext_resource type="Script" uid="uid://be005fg2t5kb6" path="res://COMPONENTS/Tile/ResourceTypes/item_resource.gd" id="2_q58xo"]
+
+[resource]
+script = ExtResource("2_q58xo")
+name = "Mosquito"
+scene = ExtResource("1_ypcya")
+award_multiplier = true
+multiplier = 2.0
+metadata/_custom_type_script = "uid://be005fg2t5kb6"

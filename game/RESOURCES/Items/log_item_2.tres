@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cekwggkn8j34u"]
+
+[ext_resource type="PackedScene" uid="uid://cmhf3vhiiuin8" path="res://RESOURCES/Items/Scenes/bug_item.tscn" id="1_j8mxr"]
+[ext_resource type="Script" uid="uid://be005fg2t5kb6" path="res://COMPONENTS/Tile/ResourceTypes/item_resource.gd" id="2_6ie23"]
+
+[resource]
+script = ExtResource("2_6ie23")
+name = "Bug"
+scene = ExtResource("1_j8mxr")
+points = 100
+award_multiplier = true
+multiplier = 7.0
+metadata/_custom_type_script = "uid://be005fg2t5kb6"

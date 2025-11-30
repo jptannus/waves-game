@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="GivePointsAction" load_steps=2 format=3 uid="uid://cws85l4bl40sb"]
+
+[ext_resource type="Script" uid="uid://d1lssq87b8427" path="res://COMPONENTS/Tile/ResourceTypes/Actions/give_points.gd" id="1_vuv83"]
+
+[resource]
+script = ExtResource("1_vuv83")
+metadata/_custom_type_script = "uid://d1lssq87b8427"

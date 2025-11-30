@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TileCollection" load_steps=9 format=3 uid="uid://voeqxijnry4k"]
+
+[ext_resource type="Script" uid="uid://bbe7pni88arws" path="res://COMPONENTS/Tile/ResourceTypes/tile_collection.gd" id="1_q6sw3"]
+[ext_resource type="Script" uid="uid://cwenv8ffqjly5" path="res://COMPONENTS/Tile/ResourceTypes/tile_resource.gd" id="2_45jrp"]
+[ext_resource type="Resource" uid="uid://qr0u55c50jua" path="res://RESOURCES/Tiles/bud_tile.tres" id="3_fxp7p"]
+[ext_resource type="Resource" uid="uid://bme6rxh0q108t" path="res://RESOURCES/Tiles/tree_tile.tres" id="4_n52ks"]
+[ext_resource type="Resource" uid="uid://br2jfpjdc2aig" path="res://RESOURCES/Tiles/sapling_tile.tres" id="4_t0omj"]
+[ext_resource type="Resource" uid="uid://bm12xc3ypxv72" path="res://RESOURCES/Tiles/flower_tile.tres" id="5_or1dr"]
+[ext_resource type="Resource" uid="uid://b0sope82x2u18" path="res://RESOURCES/Tiles/lake_tile.tres" id="6_ch70u"]
+[ext_resource type="Resource" uid="uid://dmvdfky5y47tr" path="res://RESOURCES/Tiles/log_tile.tres" id="8_t0omj"]
+
+[resource]
+script = ExtResource("1_q6sw3")
+tiles = Array[ExtResource("2_45jrp")]([ExtResource("3_fxp7p"), ExtResource("4_t0omj"), ExtResource("6_ch70u"), ExtResource("4_n52ks"), ExtResource("5_or1dr"), ExtResource("8_t0omj")])
+metadata/_custom_type_script = "uid://bbe7pni88arws"

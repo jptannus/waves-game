@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmbc5f4py1eba"]
+
+[ext_resource type="Script" uid="uid://rkhphpggat0s" path="res://COMPONENTS/Board/TileSlot/tile_slot.gd" id="1_cfdhg"]
+[ext_resource type="Texture2D" uid="uid://f6tablsn0ih8" path="res://RESOURCES/Tiles/Assets/empty_tile_place.png" id="2_ajxt8"]
+[ext_resource type="PackedScene" uid="uid://dg26dktbbq5sn" path="res://COMPONENTS/DragAndDrop/DroppableArea/droppable_area.tscn" id="3_bhy6r"]
+
+[node name="TileSlot" type="Node2D"]
+script = ExtResource("1_cfdhg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ajxt8")
+centered = false
+
+[node name="PositionLabel" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0.43137255)
+offset_left = 57.0
+offset_top = 61.0
+offset_right = 140.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 43
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DroppableArea" parent="." instance=ExtResource("3_bhy6r")]
+unique_name_in_owner = true
+position = Vector2(20, 33)
+
+[connection signal="dropped" from="DroppableArea" to="." method="_on_dropable_area_dropped"]
+[connection signal="mouse_pressed" from="DroppableArea" to="." method="_on_dropable_area_mouse_pressed"]

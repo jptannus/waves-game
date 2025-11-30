@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GiveItemBehavior" load_steps=2 format=3 uid="uid://gpbjq7dk1422"]
+
+[ext_resource type="Script" uid="uid://dy1s53mtopjhq" path="res://COMPONENTS/Tile/ResourceTypes/Actions/give_item_behavior.gd" id="1_b3kmj"]
+
+[resource]
+script = ExtResource("1_b3kmj")
+target_tile_name = "Tree"
+item_name = "Butterfly"
+metadata/_custom_type_script = "uid://dy1s53mtopjhq"

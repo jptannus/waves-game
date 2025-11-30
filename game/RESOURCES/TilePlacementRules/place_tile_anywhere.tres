@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TilePlacementRule" load_steps=2 format=3 uid="uid://bcab7rnbbmfar"]
+
+[ext_resource type="Script" uid="uid://b4qos7mk3kuyj" path="res://COMPONENTS/Tile/ResourceTypes/tile_placement_rule.gd" id="1_hgj34"]
+
+[resource]
+script = ExtResource("1_hgj34")
+position_anywhere = true
+metadata/_custom_type_script = "uid://b4qos7mk3kuyj"

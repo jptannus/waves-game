@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://dr830t52dqtny"]
+
+[ext_resource type="Texture2D" uid="uid://blc8pnj3rcevx" path="res://RESOURCES/Items/Assets/seed_item.png" id="1_12463"]
+[ext_resource type="FontFile" uid="uid://df7p3ip6t1dxw" path="res://RESOURCES/Fonts/NationalPark-VariableFont_wght.ttf" id="2_5h5il"]
+[ext_resource type="Texture2D" uid="uid://2lleuyscfs5g" path="res://RESOURCES/Items/Assets/apple_item.png" id="2_ilk4k"]
+
+[sub_resource type="FontVariation" id="FontVariation_ce7j4"]
+base_font = ExtResource("2_5h5il")
+variation_opentype = {
+2003265652: 400
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_aa08u"]
+font = SubResource("FontVariation_ce7j4")
+font_size = 24
+font_color = Color(0.036769908, 0.17499104, 0.13655934, 1)
+
+[node name="GuideItem" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+offset_right = 367.0
+offset_bottom = 64.0
+theme_override_constants/separation = 8
+
+[node name="Recipe" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Recipe"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_12463")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Recipe"]
+layout_mode = 2
+text = "+"
+label_settings = SubResource("LabelSettings_aa08u")
+
+[node name="TextureRect2" type="TextureRect" parent="Recipe"]
+layout_mode = 2
+texture = ExtResource("1_12463")
+expand_mode = 3
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+text = "="
+label_settings = SubResource("LabelSettings_aa08u")
+
+[node name="Result" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Result"]
+layout_mode = 2
+texture = ExtResource("2_ilk4k")
+expand_mode = 3
+
+[node name="Score" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Score"]
+layout_mode = 2
+text = "2000"
+label_settings = SubResource("LabelSettings_aa08u")

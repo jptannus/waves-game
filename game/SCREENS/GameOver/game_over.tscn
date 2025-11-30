@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=3 uid="uid://d3o0ylb6i1bag"]
+
+[ext_resource type="Script" uid="uid://djwgorj40de2s" path="res://SCREENS/GameOver/game_over.gd" id="1_cr8eu"]
+[ext_resource type="Texture2D" uid="uid://d4bsdgd8yer0q" path="res://SCREENS/MainMenu/Assets/main-menu-bg.png" id="2_khirw"]
+[ext_resource type="AudioStream" uid="uid://dfd57ohne4l61" path="res://SCREENS/GameOver/Assets/476340__nolhananas__tada.wav" id="2_vg3dq"]
+[ext_resource type="AudioStream" uid="uid://dasjn2rqhc27o" path="res://COMPONENTS/GameUI/Assets/475188__sheyvan__button-clicking-1.wav" id="3_4dace"]
+[ext_resource type="FontFile" uid="uid://df7p3ip6t1dxw" path="res://RESOURCES/Fonts/NationalPark-VariableFont_wght.ttf" id="3_cfl5k"]
+[ext_resource type="Theme" uid="uid://4tg6bw6qskp5" path="res://RESOURCES/Themes/main_theme.tres" id="4_6nj6m"]
+
+[sub_resource type="FontVariation" id="FontVariation_ce7j4"]
+base_font = ExtResource("3_cfl5k")
+variation_opentype = {
+2003265652: 400
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_tyskl"]
+font = SubResource("FontVariation_ce7j4")
+font_size = 64
+outline_size = 32
+outline_color = Color(0.023529412, 0.08627451, 0.16862746, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8biwn"]
+font = SubResource("FontVariation_ce7j4")
+font_size = 128
+outline_size = 64
+outline_color = Color(0.023529412, 0.08627451, 0.16862746, 1)
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cr8eu")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.138572, 0.21158233, 0.26872328, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_khirw")
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -516.0
+offset_top = -165.0
+offset_right = 516.0
+offset_bottom = 165.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 128
+
+[node name="ScoreContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="GameOverLabel" type="Label" parent="VBoxContainer/ScoreContainer"]
+layout_mode = 2
+text = "Your score:"
+label_settings = SubResource("LabelSettings_tyskl")
+
+[node name="ScoreValue" type="Label" parent="VBoxContainer/ScoreContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 90
+text = "9999999999999"
+label_settings = SubResource("LabelSettings_8biwn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 64
+
+[node name="PlayAgainButton" type="Button" parent="VBoxContainer/OptionsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_6nj6m")
+text = "Play Again"
+
+[node name="MainMenuButton" type="Button" parent="VBoxContainer/OptionsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme = ExtResource("4_6nj6m")
+text = "Back to main menu"
+
+[node name="TadaSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_vg3dq")
+bus = &"SoundEffects"
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_4dace")
+bus = &"SoundEffects"
+
+[connection signal="pressed" from="VBoxContainer/OptionsContainer/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

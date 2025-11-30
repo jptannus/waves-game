@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsf884j8ex5b1"]
+
+[ext_resource type="Script" uid="uid://r81pv6xj0feg" path="res://COMPONENTS/Tile/tile.gd" id="1_fo1ol"]
+[ext_resource type="AudioStream" uid="uid://bdehf6w7g8dlj" path="res://COMPONENTS/Tile/Assets/817576__silverdubloons__slidecard01.wav" id="2_ogg8h"]
+
+[node name="BaseTile" type="Node2D"]
+script = ExtResource("1_fo1ol")
+
+[node name="ArtSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(80, 80)
+
+[node name="AudioEffect" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_ogg8h")
+bus = &"SoundEffects"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ReplaceNeighborBehavior" load_steps=2 format=3 uid="uid://dwa3nvb7spo7q"]
+
+[ext_resource type="Script" uid="uid://cbaygqjrcnbyd" path="res://COMPONENTS/Tile/ResourceTypes/Actions/replace_neighbor_behavior.gd" id="1_vh1go"]
+
+[resource]
+script = ExtResource("1_vh1go")
+target_tile_name = "Flower Bud"
+transform_to_tile_name = "Flower"
+metadata/_custom_type_script = "uid://cbaygqjrcnbyd"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="TileResource" load_steps=6 format=3 uid="uid://br2jfpjdc2aig"]
+
+[ext_resource type="Texture2D" uid="uid://8k335yq2e3x8" path="res://RESOURCES/Tiles/Assets/sapling_tile.png" id="1_7o3sg"]
+[ext_resource type="Script" uid="uid://dbmjl83vl3n0y" path="res://COMPONENTS/Tile/ResourceTypes/tile_behavior.gd" id="2_xmjut"]
+[ext_resource type="Script" uid="uid://cwenv8ffqjly5" path="res://COMPONENTS/Tile/ResourceTypes/tile_resource.gd" id="3_jxxnw"]
+[ext_resource type="Resource" uid="uid://cpftly4nsbi71" path="res://RESOURCES/Tiles/Behaviors/grow_tree_behavior.tres" id="3_xmjut"]
+[ext_resource type="Resource" uid="uid://pmoikkmx0f7w" path="res://RESOURCES/Tiles/Behaviors/give_points_behavior.tres" id="4_jxxnw"]
+
+[resource]
+script = ExtResource("3_jxxnw")
+name = "Sapling"
+art = ExtResource("1_7o3sg")
+printable_string = "S"
+behaviors = Array[ExtResource("2_xmjut")]([ExtResource("3_xmjut"), ExtResource("4_jxxnw")])
+base_points = 30
+metadata/_custom_type_script = "uid://cwenv8ffqjly5"

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="TileResource" load_steps=10 format=3 uid="uid://bme6rxh0q108t"]
+
+[ext_resource type="Texture2D" uid="uid://c8c7yd80crdyd" path="res://RESOURCES/Tiles/Assets/tree_tile.png" id="1_6raoa"]
+[ext_resource type="Script" uid="uid://dbmjl83vl3n0y" path="res://COMPONENTS/Tile/ResourceTypes/tile_behavior.gd" id="2_3w6gv"]
+[ext_resource type="Resource" uid="uid://crinuib2ayx8a" path="res://RESOURCES/Items/tree_item_1.tres" id="3_6raoa"]
+[ext_resource type="Script" uid="uid://cwenv8ffqjly5" path="res://COMPONENTS/Tile/ResourceTypes/tile_resource.gd" id="3_540ru"]
+[ext_resource type="Resource" uid="uid://d12y8w4cq8hlk" path="res://RESOURCES/Tiles/Behaviors/tree_give_item_behavior.tres" id="3_r8mno"]
+[ext_resource type="Resource" uid="uid://pmoikkmx0f7w" path="res://RESOURCES/Tiles/Behaviors/give_points_behavior.tres" id="4_3cwy1"]
+[ext_resource type="Resource" uid="uid://mhax1npxgo6j" path="res://RESOURCES/Items/tree_item_2.tres" id="4_r8mno"]
+[ext_resource type="Resource" uid="uid://dtlr5bdidue7h" path="res://RESOURCES/Items/tree_item_3.tres" id="5_3cwy1"]
+[ext_resource type="Resource" uid="uid://bpfwfvotrl5hi" path="res://RESOURCES/Tiles/Behaviors/drop_log.tres" id="5_c3wcx"]
+
+[resource]
+script = ExtResource("3_540ru")
+name = "Tree"
+art = ExtResource("1_6raoa")
+printable_string = "T"
+behaviors = Array[ExtResource("2_3w6gv")]([ExtResource("3_r8mno"), ExtResource("4_3cwy1"), ExtResource("5_c3wcx")])
+item1 = ExtResource("3_6raoa")
+item1_position = Vector2i(124, 136)
+item2 = ExtResource("4_r8mno")
+item2_position = Vector2i(50, 20)
+item3 = ExtResource("5_3cwy1")
+item3_position = Vector2i(114, 34)
+metadata/_custom_type_script = "uid://cwenv8ffqjly5"

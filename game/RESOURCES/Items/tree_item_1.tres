@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://crinuib2ayx8a"]
+
+[ext_resource type="PackedScene" uid="uid://dhb0t7lkwds1y" path="res://RESOURCES/Items/Scenes/ant_item.tscn" id="1_8yfon"]
+[ext_resource type="Script" uid="uid://be005fg2t5kb6" path="res://COMPONENTS/Tile/ResourceTypes/item_resource.gd" id="2_i7486"]
+
+[resource]
+script = ExtResource("2_i7486")
+name = "Ant"
+scene = ExtResource("1_8yfon")
+points = 0
+award_multiplier = true
+multiplier = 7.0
+metadata/_custom_type_script = "uid://be005fg2t5kb6"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dd1eweybfc6wj"]
+
+[ext_resource type="PackedScene" uid="uid://b4274s01kgj78" path="res://RESOURCES/Items/Scenes/snail_item.tscn" id="1_ounx5"]
+[ext_resource type="Script" uid="uid://be005fg2t5kb6" path="res://COMPONENTS/Tile/ResourceTypes/item_resource.gd" id="2_dbrfd"]
+
+[resource]
+script = ExtResource("2_dbrfd")
+name = "Snail"
+scene = ExtResource("1_ounx5")
+award_multiplier = true
+multiplier = 3.0
+metadata/_custom_type_script = "uid://be005fg2t5kb6"

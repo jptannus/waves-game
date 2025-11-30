@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://mhax1npxgo6j"]
+
+[ext_resource type="PackedScene" uid="uid://gf1vwl1qldjq" path="res://RESOURCES/Items/Scenes/apple_item.tscn" id="1_c7smy"]
+[ext_resource type="Script" uid="uid://be005fg2t5kb6" path="res://COMPONENTS/Tile/ResourceTypes/item_resource.gd" id="2_iwlpd"]
+
+[resource]
+script = ExtResource("2_iwlpd")
+name = "Apple"
+scene = ExtResource("1_c7smy")
+award_points = true
+points = 100
+multiplier = 0.0
+metadata/_custom_type_script = "uid://be005fg2t5kb6"
