@@ -8,5 +8,5 @@ script = ExtResource("2_3qqfe")
 name = "Flower"
 scene = ExtResource("1_6th3e")
 award_points = true
-points = 100
+points = 200
 metadata/_custom_type_script = "uid://be005fg2t5kb6"

@@ -8,5 +8,5 @@ script = ExtResource("2_vcqwy")
 name = "Seed"
 scene = ExtResource("1_5ru0l")
 award_points = true
-points = 200
+points = 500
 metadata/_custom_type_script = "uid://be005fg2t5kb6"
