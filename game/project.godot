@@ -45,4 +45,4 @@ tile_droppable="Places where tiles can be dropped"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 viewport/hdr_2d=true
-environment/defaults/default_clear_color=Color(0.6431373, 0.7882353, 0.6392157, 1)
+environment/defaults/default_clear_color=Color(0.59144664, 0.79, 0.58460003, 1)
