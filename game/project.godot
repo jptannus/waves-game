@@ -24,6 +24,7 @@ SceneManager="*res://GLOBALS/SceneManager/scene_manager.tscn"
 TileDatabase="*res://GLOBALS/TileDatabase/tile_database.tscn"
 ItemDatabase="*res://GLOBALS/ItemDatabase/item_database.tscn"
 ScoreSystem="*res://GLOBALS/ScoreSystem/score_system.gd"
+AudioManager="*res://GLOBALS/AudioManager/audio_manager.tscn"
 
 [display]
 
