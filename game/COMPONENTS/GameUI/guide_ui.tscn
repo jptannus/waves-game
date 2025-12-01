@@ -150,7 +150,7 @@ texture = ExtResource("8_hbpdc")
 texture = ExtResource("10_yyhkw")
 
 [node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem5/Score" index="0"]
-text = "+200"
+text = "+500"
 
 [node name="GuideItem6" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
 layout_mode = 2
@@ -180,7 +180,7 @@ texture = ExtResource("8_hbpdc")
 texture = ExtResource("12_ftdxi")
 
 [node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem7/Score" index="0"]
-text = "x3"
+text = "x5"
 
 [node name="GuideItem8" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
 layout_mode = 2
@@ -192,7 +192,7 @@ texture = ExtResource("8_hbpdc")
 texture = ExtResource("3_0nxpy")
 
 [node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem8/Score" index="0"]
-text = "+100"
+text = "+200"
 
 [node name="GuideItem9" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
 layout_mode = 2
@@ -222,7 +222,7 @@ texture = ExtResource("3_0nxpy")
 texture = ExtResource("14_sqc5a")
 
 [node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem10/Score" index="0"]
-text = "x7"
+text = "x5"
 
 [node name="GuideItem11" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
 layout_mode = 2
@@ -237,7 +237,7 @@ texture = ExtResource("5_o7ram")
 texture = ExtResource("15_vt1n7")
 
 [node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem11/Score" index="0"]
-text = "+100"
+text = "+200"
 
 [node name="GuideItem12" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
 layout_mode = 2
@@ -252,7 +252,7 @@ texture = ExtResource("5_o7ram")
 texture = ExtResource("16_n3mf0")
 
 [node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem12/Score" index="0"]
-text = "+200"
+text = "+500"
 
 [node name="GuideItem13" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
 layout_mode = 2
@@ -267,7 +267,7 @@ texture = ExtResource("5_o7ram")
 texture = ExtResource("17_bkit1")
 
 [node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem13/Score" index="0"]
-text = "x3"
+text = "x5"
 
 [node name="GuideItem14" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
 layout_mode = 2
@@ -297,7 +297,7 @@ texture = ExtResource("7_a4ld7")
 texture = ExtResource("19_1nulb")
 
 [node name="Label" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/GuideItem15/Score" index="0"]
-text = "x5"
+text = "x7"
 
 [node name="GuideItem16" parent="Guide/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_it66w")]
 layout_mode = 2
