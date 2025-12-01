@@ -3,6 +3,10 @@ extends Control
 @onready var how_to_play_modal: MarginContainer = %HowToPlayModal
 
 
+func _ready() -> void:
+	AudioManager.play_bgm()
+
+
 func _on_start_game_button_pressed() -> void:
 	%ButtonClickAudio.play()
 	SceneManager.change_scene(SceneManager.GAME)
