@@ -13,9 +13,10 @@ config_version=5
 config/name="Winged Animals Visit Every Season"
 run/main_scene="uid://c8fshbmgebic0"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-boot_splash/show_image=false
+boot_splash/bg_color=Color(0.5882353, 0.78431374, 0.5803922, 1)
 boot_splash/fullsize=false
 boot_splash/use_filter=false
+boot_splash/image="uid://dj3lkki2dgx0y"
 config/icon="uid://utrihtfcc0d6"
 
 [autoload]
