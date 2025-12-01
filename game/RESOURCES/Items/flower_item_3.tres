@@ -9,5 +9,5 @@ name = "Bee"
 scene = ExtResource("1_2vf76")
 points = 0
 award_multiplier = true
-multiplier = 3.0
+multiplier = 5.0
 metadata/_custom_type_script = "uid://be005fg2t5kb6"
