@@ -169,7 +169,7 @@ theme_override_font_sizes/bold_italics_font_size = 32
 theme_override_font_sizes/italics_font_size = 32
 theme_override_font_sizes/mono_font_size = 32
 bbcode_enabled = true
-text = "* Place a tile in the board
+text = "* Place a tile on the board
 * The tiles on the board will react to the tiles you place, creating life!
 * Every few turns, you must place a bird to score on a row or column of your choice.
 * Some of the items on the tiles will award points, others will multiply the points.
