@@ -113,7 +113,7 @@ theme_override_constants/separation = 24
 [node name="ComboPointsValue" type="Label" parent="ScoreUI/MarginContainer/VBoxContainer/ComboContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "9,999"
+text = "0"
 label_settings = SubResource("LabelSettings_jp0bk")
 
 [node name="x" type="Label" parent="ScoreUI/MarginContainer/VBoxContainer/ComboContainer"]
@@ -125,7 +125,7 @@ label_settings = SubResource("LabelSettings_jp0bk")
 [node name="ComboMultiplierValue" type="Label" parent="ScoreUI/MarginContainer/VBoxContainer/ComboContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "999"
+text = "0"
 label_settings = SubResource("LabelSettings_jp0bk")
 
 [node name="Bird" type="TextureRect" parent="ScoreUI"]
