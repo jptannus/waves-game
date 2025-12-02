@@ -83,7 +83,7 @@ func _create_tile_instance(tile_name: String) -> void:
 		var tile = TileDatabase.create_tile_by_name(tile_name)
 		if tile:
 			var stack := _create_tile_stack(tile_name)
-			stack.set_item(tile)
+			stack.set_node(tile)
 			stack.set_quantity(1)
 			add_child(stack)
 			_instances.set(tile_name, stack)
@@ -102,8 +102,7 @@ func _remove_tile_instance(tile_name: String) -> void:
 func _create_tile_stack(tile_name: String) -> DraggableStack:
 	var stack: DraggableStack = DRAGGABLE_STACK.instantiate()
 	stack.mouse_pressed.connect(_on_mouse_pressed)
-	stack.item_added.connect(_on_item_added)
-	stack.item_removed.connect(_on_item_removed(tile_name))
+	stack.node_removed.connect(_on_node_removed(tile_name))
 	stack.infinite = false
 	return stack
 
@@ -112,10 +111,6 @@ func _on_mouse_pressed(droppbable_area: DroppableArea) -> void:
 	mouse_pressed.emit(droppbable_area)
 
 
-func _on_item_added(_node: Node2D) -> void:
-	pass
-
-
-func _on_item_removed(tile_name: String) -> Callable:
+func _on_node_removed(tile_name: String) -> Callable:
 	return func():
 		tile_taken.emit(_silent_take_tile(tile_name))

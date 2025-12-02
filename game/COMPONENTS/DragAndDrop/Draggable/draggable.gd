@@ -4,10 +4,12 @@ extends Node2D
 ## 	This scene is the one that will be dragged around when dragging is happening.
 ##	It is also the one that detects if it is over possible DroppableAreas.
 
+## Emitted when the node being dragged is dropped.
 signal dropped()
 
-@export var content_offset_x: float = -64.0
-@export var content_offset_y: float = -64.0
+## This is the offset position the node being draged should 
+## have relative to the mouse
+@export var content_offset: Vector2 = Vector2(-64.0, -64.0)
 
 var _dragging: bool = false
 var _hovering_area: Node2D
@@ -28,7 +30,7 @@ func start_dragging(node: Node2D, origin: DroppableArea) -> void:
 	_holding = node
 	_origin = origin
 	node.reparent(self)
-	node.position = Vector2(content_offset_x, content_offset_y)
+	node.position = content_offset
 	_dragging = true
 
 
@@ -51,6 +53,7 @@ func drop() -> Node2D:
 	return place
 
 
+## Returns true if currently dragging a node
 func is_dragging() -> bool:
 	return _dragging
 
