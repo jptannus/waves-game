@@ -21,6 +21,9 @@ func _process(_delta: float) -> void:
 		global_position = get_global_mouse_position()
 
 
+## Start the behavior of dragging the provided node.
+## An origin needs to be provided for the case where the node should 
+## return to it
 func start_dragging(node: Node2D, origin: DroppableArea) -> void:
 	_holding = node
 	_origin = origin
@@ -29,6 +32,8 @@ func start_dragging(node: Node2D, origin: DroppableArea) -> void:
 	_dragging = true
 
 
+## Remove the node from the draggable dropping it in a valid droppable area.
+## It tries to drop if over a valid area, or else it will go back to its origin.
 func drop() -> Node2D:
 	var place: Node2D = null
 	# If there is a hovering area we try that
@@ -73,11 +78,15 @@ func _stop_dragging() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if is_dragging():
 		_hovering_area = body
+		if body is DroppableArea and body != _origin:
+			body.is_draggin_over(_holding)
 
 
-func _on_area_2d_body_exited(_body: Node2D) -> void:
+func _on_area_2d_body_exited(body: Node2D) -> void:
 	if is_dragging():
 		_hovering_area = null
+		if body is DroppableArea and body != _origin:
+			body.is_draggin_out(_holding)
 
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ProbabilityList" load_steps=15 format=3 uid="uid://kkr2w8dwopoj"]
 
-[ext_resource type="Script" uid="uid://dkjqdjtghi5ro" path="res://COMPONENTS/ProbabilityList/probability_item.gd" id="1_rfl4r"]
+[ext_resource type="Script" uid="uid://dkjqdjtghi5ro" path="res://COMPONENTS/ProbabilityList/probability_list_item.gd" id="1_rfl4r"]
 [ext_resource type="Script" uid="uid://ft64mua17quy" path="res://COMPONENTS/ProbabilityList/probability_list.gd" id="2_2mrmf"]
 [ext_resource type="Resource" uid="uid://qr0u55c50jua" path="res://RESOURCES/Tiles/bud_tile.tres" id="2_i7x3w"]
 [ext_resource type="Resource" uid="uid://br2jfpjdc2aig" path="res://RESOURCES/Tiles/sapling_tile.tres" id="3_oi7gg"]

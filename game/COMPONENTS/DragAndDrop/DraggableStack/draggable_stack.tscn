@@ -9,6 +9,12 @@ script = ExtResource("1_xubfx")
 [node name="DropableArea" parent="." instance=ExtResource("2_lv4sx")]
 unique_name_in_owner = true
 
+[node name="FakeButton" type="TextureButton" parent="."]
+offset_right = 160.0
+offset_bottom = 160.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+
 [connection signal="content_dragged" from="DropableArea" to="." method="_on_dropable_area_content_dragged"]
 [connection signal="drop_resolved" from="DropableArea" to="." method="_on_dropable_area_drop_resolved"]
 [connection signal="mouse_pressed" from="DropableArea" to="." method="_on_dropable_area_mouse_pressed"]

@@ -33,10 +33,6 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg")
-
 [global_group]
 
 tile_droppable="Places where tiles can be dropped"

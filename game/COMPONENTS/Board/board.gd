@@ -91,6 +91,18 @@ func is_full() -> bool:
 	return result
 
 
+func disable_tile_click() -> void:
+	for row in _tile_slots:
+		for tile_slot: TileSlot in row:
+			tile_slot.disable_click()
+			
+
+func enable_tile_click() -> void:
+	for row in _tile_slots:
+		for tile_slot: TileSlot in row:
+			tile_slot.enable_click()
+
+
 func _populate_tile_slots(tile_map: Array[Array]) -> void:
 	if !time_slot_scene:
 		push_error("Tile slot scene not defined")

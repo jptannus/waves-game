@@ -9,9 +9,12 @@ signal dropped(node: Node2D)
 signal content_dragged(node: Node2D)
 signal mouse_pressed(droppable_area: DroppableArea)
 signal drop_resolved()
+signal dragging_over(node: Node2D)
+signal dragging_out(node: Node2D)
 
 @export var holding_node: Node2D
 @export var display_visuals: bool = false
+@export var clickable: bool = false
 
 var _disabled: bool = false
 var _drop_only: bool = false
@@ -19,6 +22,7 @@ var _drop_only: bool = false
 
 func _ready() -> void:
 	%Sprite2D.visible = display_visuals
+	%FakeButton.visible = clickable
 
 
 func can_hold(_node: Node2D) -> bool:
@@ -97,6 +101,19 @@ func set_drop_only(value: bool) -> void:
 
 func is_drop_only() -> bool:
 	return _drop_only
+
+
+func is_draggin_over(node: Node2D) -> void:
+	dragging_over.emit(node)
+	
+	
+func is_draggin_out(node: Node2D) -> void:
+	dragging_out.emit(node)
+
+
+func set_clickable(value: bool) -> void:
+	clickable = value
+	%FakeButton.visible = clickable
 
 
 func _update_display() -> void:

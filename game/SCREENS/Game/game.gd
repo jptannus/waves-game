@@ -103,11 +103,13 @@ func _refill_inventory() -> void:
 func _disable_tile_placement() -> void:
 	_tile_placement_enabled = false
 	%TileInventory.visible = false
+	%Board.disable_tile_click()
 
 
 func _enable_tile_placement() -> void:
 	_tile_placement_enabled = true
 	%TileInventory.visible = true
+	%Board.enable_tile_click()
 
 ##############################################################################
 #endregion

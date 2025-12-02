@@ -9,6 +9,7 @@ var _row: int
 var _column: int
 var _tile: Tile
 var _draggable: bool = true
+var _disable_click: bool = false
 
 
 func set_board_position(row: int, column: int) -> void:
@@ -46,6 +47,17 @@ func remove_tile() -> void:
 	tile_removed.emit(tile, Vector2i(_row, _column))
 
 
+func disable_click() -> void:
+	_disable_click = true
+	%DroppableArea.set_clickable(false)
+	_highlight_off()
+	
+	
+func enable_click() -> void:
+	_disable_click = false
+	%DroppableArea.set_clickable(true)
+
+
 func _update_position_text() -> void:
 	%PositionLabel.text = str(_row) + "," + str(_column)
 
@@ -59,7 +71,34 @@ func _on_dropable_area_dropped(node: Node2D) -> void:
 		_tile = node
 		_tile.transform_into.connect(_on_transform_tile)
 		dropped.emit(node, Vector2(_row, _column))
+		_highlight_off()
 
 
 func _on_transform_tile(_old_tile: Tile, new_tile: Tile) -> void:
 	replace_tile(new_tile)
+
+
+func _on_droppable_area_dragging_over(_node: Node2D) -> void:
+	_highlight_on()
+
+
+func _on_droppable_area_dragging_out(_node: Node2D) -> void:
+	_highlight_off()
+
+
+func _highlight_on() -> void:
+	%Sprite2D.visible = false
+	
+
+func _highlight_off() -> void:
+	%Sprite2D.visible = true
+
+
+func _on_droppable_area_mouse_entered() -> void:
+	if !_disable_click:
+		_highlight_on()
+
+
+func _on_droppable_area_mouse_exited() -> void:
+	if !_disable_click:
+		_highlight_off()

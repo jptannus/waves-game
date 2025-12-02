@@ -8,6 +8,7 @@
 script = ExtResource("1_cfdhg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 texture = ExtResource("2_ajxt8")
 centered = false
 
@@ -30,5 +31,9 @@ metadata/_edit_use_anchors_ = true
 unique_name_in_owner = true
 position = Vector2(20, 33)
 
+[connection signal="dragging_out" from="DroppableArea" to="." method="_on_droppable_area_dragging_out"]
+[connection signal="dragging_over" from="DroppableArea" to="." method="_on_droppable_area_dragging_over"]
 [connection signal="dropped" from="DroppableArea" to="." method="_on_dropable_area_dropped"]
+[connection signal="mouse_entered" from="DroppableArea" to="." method="_on_droppable_area_mouse_entered"]
+[connection signal="mouse_exited" from="DroppableArea" to="." method="_on_droppable_area_mouse_exited"]
 [connection signal="mouse_pressed" from="DroppableArea" to="." method="_on_dropable_area_mouse_pressed"]

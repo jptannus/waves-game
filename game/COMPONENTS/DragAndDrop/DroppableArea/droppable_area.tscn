@@ -9,6 +9,7 @@ size = Vector2(160, 160)
 [node name="DropableArea" type="StaticBody2D" groups=["tile_droppable"]]
 input_pickable = true
 script = ExtResource("1_0jg1w")
+clickable = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -21,5 +22,12 @@ texture = ExtResource("2_ied5c")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(80, 80)
 shape = SubResource("RectangleShape2D_bj5oo")
+
+[node name="FakeButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+offset_right = 160.0
+offset_bottom = 160.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

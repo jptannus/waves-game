@@ -24,8 +24,8 @@ func set_draggable_parent(draggable_parent: Node2D) -> void:
 	_draggable_parent = draggable_parent
 
 
-# Function that handles the input event of whem the mouse is pressed over
-# a draggable area. Here the decision is made of what to be done.
+## Handles the input event of whem the mouse is pressed over
+## a draggable area. Here the decision is made of what to be done.
 func handle_droppable_area_pressed(droppable_area: DroppableArea) -> void:
 	if !_draggable and !droppable_area.is_drop_only() and droppable_area.is_holding():
 		var draggable: Draggable = DRAGGABLE_SCENE.instantiate()
@@ -36,13 +36,14 @@ func handle_droppable_area_pressed(droppable_area: DroppableArea) -> void:
 		draggable.start_dragging(droppable_area.drag(), droppable_area)
 
 
+## Handles the input event of whem the mouse is released over
+## a draggable area. Here the decision is made of what to be done. 
 func handle_mouse_button_released() -> void:
 	if _draggable:
 		_draggable.drop()
 		_origin.resolve_drop()
 
 
-# This is its own function so we can add more logic for when a tile is placed
 func _on_draggable_drop() -> void:
 	_remove_draggable()
 
