@@ -5,9 +5,12 @@ extends Resource
 ## It can provide a random item from the list respecting the probability of
 ##   the items, as long as they sum 1.0
 
+## The list of probabilities
 @export var list: Array[ProbabilityListItem]
 
 
+## Gets a random item of the set list. For it to work, the sum of 
+## all probabilities on the items should be 1.0
 func get_random_item() -> ProbabilityListItem:
 	if list.size() > 0:
 		var rand = randf() # 0.0 ~ 1.0
