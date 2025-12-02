@@ -1,16 +1,26 @@
 class_name Board
 extends Node2D
 
+## Emitted when a Tile was dropped to the board
 signal dropped(node: Node2D, pos: Vector2)
+## Emitted when the mouse was pressed in a DroppableArea inside the board
 signal mouse_pressed(droppable_area: DroppableArea, pos: Vector2)
+## Emitted when a selector is pressed
 signal selector_pressed(pos: Vector2i)
+## Emitted when a tile is removed from the board, regardless of source
 signal tile_removed(tile: Tile, pos: Vector2i)
 
+## Scene to be used when creating Tile Slots
 @export var time_slot_scene: PackedScene
+## Scene to be used when creating Selectors
 @export var board_selector_scene: PackedScene
+## The display width of each Tile to be used to calculate tile position
 @export var tile_width: float
+## The display height of each Tile to be used to calculate tile position
 @export var tile_height: float
+## The space between tiles in both horizontal and vertical sides
 @export var tile_spacing: float
+## When set to true, it allows tiles to be dragged away from the board
 @export var enable_moving_tiles: bool = false
 
 var _tile_slots: Array[Array]
@@ -32,8 +42,16 @@ func display_board(tile_map: Array[Array]) -> void:
 	hide_selectors()
 
 
-func get_tile_slots() -> Array[Array]:
-	return _tile_slots
+func is_full() -> bool:
+	var result = true
+	for row in _tile_slots:
+		for tile_slot: TileSlot in row:
+			if !tile_slot.get_tile():
+				result = false
+				break
+		if !result:
+			break
+	return result
 
 
 func get_tile_map() -> Array[Array]:
@@ -55,11 +73,25 @@ func clear_tile(row: int, column: int) -> void:
 	tile_slot.remove_tile()
 
 
+func drop_tile_at(tile: Tile, pos: Vector2i) -> void:
+	var tile_slot: TileSlot = _tile_slots[pos.x - 1][pos.y - 1]
+	tile_slot.replace_tile(tile)
+
+
+func disable_tile_click() -> void:
+	_iterate_over_tile_slots(func(t: TileSlot): t.disable_click())
+
+
+func enable_tile_click() -> void:
+	_iterate_over_tile_slots(func(t: TileSlot): t.enable_click())
+
+
 func show_selectors() -> void:
 	for selector in _selectors:
 		selector.visible = true
 		selector.arrow.scale = Vector2(0.4, 0.4)
-		var tween = get_tree().create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+		var tween = get_tree().create_tween()
+		tween.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 		tween.tween_property(selector.arrow, "scale", Vector2(1.0, 1.0), 1.5)
 
 
@@ -68,39 +100,17 @@ func hide_selectors() -> void:
 		selector.visible = false
 
 
-func drop_tile_at(tile: Tile, pos: Vector2i) -> void:
-	var tile_slot: TileSlot = _tile_slots[pos.x - 1][pos.y - 1]
-	tile_slot.replace_tile(tile)
-
-
 func get_global_selector_position(pos: Vector2i) -> Vector2:
 	var x = pos.y * tile_width + tile_width / 2
 	var y = pos.x * tile_height + tile_height / 2
 	return global_position + Vector2(x, y)
 
 
-func is_full() -> bool:
-	var result = true
-	for row in _tile_slots:
-		for tile_slot: TileSlot in row:
-			if !tile_slot.get_tile():
-				result = false
-				break
-		if !result:
-			break
-	return result
-
-
-func disable_tile_click() -> void:
-	for row in _tile_slots:
-		for tile_slot: TileSlot in row:
-			tile_slot.disable_click()
-			
-
-func enable_tile_click() -> void:
-	for row in _tile_slots:
-		for tile_slot: TileSlot in row:
-			tile_slot.enable_click()
+func _iterate_over_tile_slots(f: Callable) -> Callable:
+	return func():
+		for row in _tile_slots:
+			for tile_slot: TileSlot in row:
+				f.call(tile_slot)
 
 
 func _populate_tile_slots(tile_map: Array[Array]) -> void:
@@ -153,7 +163,11 @@ func _create_board_selectors() -> void:
 		_create_and_add_board_selector(Vector2(-64, posy), Vector2i(row, -1), -90)
 		var posx = _tile_slots.size() * (tile_width + tile_spacing) + 32
 		# Right side of all rows
-		_create_and_add_board_selector(Vector2(posx, posy), Vector2i(row, _tile_slots.size()), 90)
+		_create_and_add_board_selector(
+			Vector2(posx, posy),
+			Vector2i(row, _tile_slots.size()),
+			90,
+		)
 
 	for column in _tile_slots[0].size():
 		var posx = column * (tile_width + tile_spacing) + 64
@@ -161,10 +175,18 @@ func _create_board_selectors() -> void:
 		_create_and_add_board_selector(Vector2(posx, -44), Vector2i(-1, column), 0)
 		var posy = _tile_slots.size() * (tile_width + tile_spacing) + 32
 		# Down side of all columns
-		_create_and_add_board_selector(Vector2(posx, posy), Vector2i(_tile_slots.size(), column), 180)
+		_create_and_add_board_selector(
+			Vector2(posx, posy),
+			Vector2i(_tile_slots.size(), column),
+			180,
+		)
 
 
-func _create_and_add_board_selector(pos: Vector2, initial_pos: Vector2i, angle: float) -> BoardSelector:
+func _create_and_add_board_selector(
+		pos: Vector2,
+		initial_pos: Vector2i,
+		angle: float,
+) -> BoardSelector:
 	var selector: BoardSelector = board_selector_scene.instantiate()
 	selector.set_starting_position(initial_pos)
 	selector.rotation_degrees = angle
