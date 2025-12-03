@@ -1,10 +1,15 @@
 class_name Tile
 extends Node2D
 
+## Emitted when something wants to transform this tile into another one
 signal transform_into(tile: Tile, new_tile: Tile)
+## Emitted when this tile is given any item
 signal got_item(tile: Tile, item: Item)
+## Emitted when this tile wants to increase the score
 signal add_score(score: int)
+## Emitted when this tile wants to increase the multiplier
 signal add_multiplier(multiplier: float)
+## Emitted when this tile was placed somewhere
 signal place_tile(tile: Tile, pos: Vector2i)
 
 const BASE_TILE = preload("uid://bsf884j8ex5b1")
@@ -13,13 +18,15 @@ var _resource: TileResource
 var _items: Dictionary[Item, Node2D]
 
 
+## Creates and returns an instance of a basic tile
 static func create_tile() -> Tile:
 	return BASE_TILE.instantiate()
 
 
 func _ready() -> void:
 	%ArtSprite.scale = Vector2(0.4, 0.4)
-	var tween = get_tree().create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	var tween = get_tree().create_tween()
+	tween.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 	tween.tween_property(%ArtSprite, "scale", Vector2(1.0, 1.0), 0.5)
 
 
